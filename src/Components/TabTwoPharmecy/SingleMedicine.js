@@ -23,7 +23,7 @@ const SingleMedicine = ({ value }) => {
     })
       .then((response) => response.json())
       .then((json) => {
-        toast("Item aded to the cart");
+        alert("Item aded to the cart");
       });
   };
 
