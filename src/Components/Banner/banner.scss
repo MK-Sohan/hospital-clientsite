@@ -1,0 +1,163 @@
+
+
+.banner_section_main_container {
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 17px;
+  height: 117px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent ;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #91C1BB;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+    
+
+  width: 100%;
+
+  .banner_image {
+    width: 100%;
+    background-image: url("../../Assets/bannerimage/1669977714154women-health-inner-banner1\ 1.jpg");
+    background-position: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: start;
+    justify-content: space-evenly;
+    padding: 10px;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .banner_image {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 10px;
+    }
+  }
+  
+  .headeree {
+    /* padding-top: 50px; */
+    color: rgb(248, 7, 7);
+    font-size: 80px;
+    text-align: center;
+  }
+  .dropbtn {
+    background-color: #0a0f0a;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropdown {
+    display: inline-block;
+    background-color: #ffa8a8;
+    color: white;
+    width: 400px;
+    padding: 7px 29px;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+    height: 20px;
+  }
+  .select-dropdown,
+  .select-dropdown * {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 3px;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .select-dropdown,
+    .select-dropdown * {
+      width: 80%;
+      margin: 0 auto;
+    }
+  
+    .dropdown_container {
+      margin: 40px 0px;
+    }
+  }
+  .select-dropdown {
+    position: relative;
+    background-color: #ffa8a8;
+    border-radius: 4px;
+  }
+  .select-dropdown select {
+    font-size: 1rem;
+    font-weight: normal;
+    max-width: 100%;
+    padding: 8px 24px 8px 10px;
+    border: none;
+    background-color: #ffa8a8;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  .select-dropdown select:active,
+  .select-dropdown select:focus {
+    outline: none;
+    box-shadow: none;
+    width: 100%;
+  }
+  .select-dropdown:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    width: 0;
+    height: 0;
+    margin-top: -2px;
+    border-top: 5px solid #000000;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+  }
+  
+
+}
+

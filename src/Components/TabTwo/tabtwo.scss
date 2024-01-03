@@ -1,0 +1,105 @@
+.tabtwo_main_container{
+  
+  background:white;    
+  .containerr {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+  }
+  
+  .bloc-tabs {
+    display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+      width: 90%;
+      margin: 0 auto;   
+  }
+  .tabs {
+    padding: 12px ;
+        text-align: center;
+        width: 182px;
+     display: flex;
+     justify-content: center;
+     font-weight: 500;
+     font-size:   20px;
+        cursor: pointer;
+        border: 1px solid #91C1BB;
+        box-sizing: content-box;
+        position: relative;
+        outline: none;      
+  }
+  .tabs:not(:last-child){
+    border-right: 1px solid rgba(0, 0, 0, 0.274);
+  } 
+  .active-tabs  {
+    background: #026E5F;
+    border: none;
+    color: white;
+ 
+  }
+  button {
+    border: none;
+    color: black#000000 ;
+    font-family: 'Josefin Sans';
+  }
+
+  .content {
+    background: white;
+    padding: 20px 0px;
+    display: none;
+  }
+
+  .active-content {
+    display: block;
+  }
+  .tab_content_images{
+    // display: flex;
+    // grid-template-columns: repeat(5,1fr);
+    // grid-template-rows: repeat(1,1fr);
+    // width: 100%;
+    // margin: 0 auto;
+    //     justify-items: center;
+    // align-items: center;
+  }
+
+
+  .swiper {
+    width: 95%;
+    height: 100%;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: transparent;
+  color: white;
+    /* Center slide text vertically */
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+  }
+  
+  .swiper-slide img {
+    /* display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; */
+  }
+  // .mySwiper{
+  //   width: 100%;
+  //   background-image: linear-gradient(0deg, rgba(16, 15, 15, 0.623), rgba(6, 5, 5, 0.747)), url('../../Assets/backgroundimages/th\ 1.png');
+  // background-position: center;
+  // background-size: cover;
+  // background-repeat: no-repeat;
+  // padding: 10px;
+  // }
+
+  .swiper-button-next,
+  .swiper-button-prev{
+
+    color: black;
+   
+  }
+}
+

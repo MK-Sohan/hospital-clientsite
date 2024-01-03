@@ -1,0 +1,35 @@
+.select_diagonostic_main_container{
+
+
+    .background-image {
+        position: relative;
+        height: 300px;
+        background-image: url('../../Assets/diagonosticimage/Rectangle\ 430.png');
+        background-size: cover;
+        background-position: center;
+        max-width: 321px;
+        height: 227px;
+        border-radius: 7px;
+        width: 100%;
+     
+      }
+      
+      .content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 20px;
+        color: white;
+      }
+      
+      .title {
+        font-size: 1vw;
+        font-weight: 700;
+      }
+      
+      .address, .phone {
+        font-size: .8vw;
+        font-weight: 400;      }
+      
+
+}

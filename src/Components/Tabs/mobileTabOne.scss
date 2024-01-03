@@ -1,0 +1,115 @@
+.Mobile_tab_one_main_container{
+
+
+    @media only screen and (max-width: 600px) {
+        background:white;
+   
+      
+      .containerr {
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: center;
+        // align-items: center;
+        
+        // justify-content: center;
+        // align-items: center;
+        // border: soli+d;
+        
+      }
+      
+      .bloc-tabs {
+        display: flex;
+        gap: 20px;
+        // grid-template-columns: repeat(7,1fr);
+        // gap: 6px;
+        // flex-wrap: wrap;
+        justify-content: start; 
+        margin-top: 20px; 
+       
+       
+      }
+      .tabs {
+      
+        padding: 1px ;
+        text-align: center;
+        width: 118px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     font-weight: 500;
+     font-size:   16px;
+        // background: rgba(128, 128, 128, 0.075);
+        cursor: pointer;
+        border: 1px solid #91C1BB;
+        box-sizing: content-box;
+        position: relative;
+        outline: none;
+        
+      }
+      .tabs:not(:last-child){
+        border-right: 1px solid rgba(0, 0, 0, 0.274);
+      }
+      
+      .active-tabs  {
+        background: #026E5F;
+        border: none;
+        color: white;
+      }
+      
+ 
+
+      button {
+        border: none;
+        color: black#000000 ;
+        font-family: 'Josefin Sans';
+
+        
+      }
+
+      .content {
+        background: white;
+        padding: 20px 0px;
+        display: none;
+      }
+    
+      .active-content {
+        display: block;
+     
+      }
+      .tab_content_images{
+        display: flex;
+        // grid-template-columns: repeat(9,1fr);
+        width: 100%;
+        gap: 62px;
+      
+      }
+
+
+
+      .tab_back_imege{
+      
+        background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.712), rgba(255, 255, 255, 0.73)),url('../../Assets/backgroundimages/image\ 1.png');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+ 
+        // width: 337px !important;
+        border: solid;
+        width: 137px;
+        // height:151px;
+        font-family: 'Playfair Display';
+    //   font-style: normal;
+    //   font-weight: 500;
+    //   font-size: 16px;
+
+      
+    //   letter-spacing: 0.02em;
+      
+      color: #000000;
+      }
+      /* ----------------------------------tab section style end --------------------------- */
+      
+
+      }
+
+}

@@ -1,0 +1,111 @@
+.doctor_appointment_container{
+
+.date_section{
+    .input-field{
+
+        padding: 10px 0px;
+        font-size: 1.25rem;
+        line-height: 1.5;
+        border-radius: 0.3rem;
+        display: block;
+        width: 659px;
+        font-weight: 400;
+        color: #495057;
+        background-color: #CFCFCF;
+    
+    }
+
+    // input[type="date"]::-webkit-calendar-picker-indicator {
+    //     position: absolute;
+    //     left: 17vw;
+    // }
+    // input::-webkit-datetime-edit-fields-wrapper {
+    //     position: relative;
+    //     left: 30px;
+    // }
+    // input::-webkit-datetime-edit {
+    //     position: relative;
+    //     left: 10%;
+    // }
+
+    @media only screen and (max-width: 644px) {
+        
+      input[type="date"]::-webkit-calendar-picker-indicator {
+        position: absolute;
+        left: 7vw;
+    }
+    input::-webkit-datetime-edit-fields-wrapper {
+        position: relative;
+        left: 0px;
+    }
+    input::-webkit-datetime-edit {
+        position: relative;
+        left: 0%;
+    }
+
+    }
+}
+
+
+
+    
+      
+      .dropdown {
+        display: inline-block;
+        background-color: #020101;
+        color: rgb(0, 0, 0);
+        width: 400px;
+        padding: 7px 29px;
+      }
+      
+      /* Dropdown Content (Hidden by Default) */
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #000000;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+      
+      /* Links inside the dropdown */
+     
+      
+      .dropdown-content a:hover {
+        background-color: #000000;
+      }
+      
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+      
+     
+      .select-dropdown,
+      .select-dropdown * {
+        margin: 0;
+        padding: 0;
+        position: relative;
+        box-sizing: border-box;
+        width: 559px;
+        border-radius: 3px;
+        background-color: #ffffff;
+        border-radius: 6px;
+        margin-left: 10px;
+      }
+      
+      
+
+
+
+
+      
+   
+     
+    
+    
+    
+    
+}
+   
+
+

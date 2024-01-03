@@ -1,0 +1,24 @@
+.booknowDiagonostics_main_container_wrapper{
+    .booknowDiagonostics_banner_section{
+        width: 100%;
+        background-image:linear-gradient(0deg, rgba(122, 117, 117, 0.415), rgba(151, 149, 149, 0.463)), url('../../Assets/DiagonosticpageImage/th\ \(1\)\ 1.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: block;
+height: 389px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+text-align: center;
+align-items: center;
+    }
+
+
+
+    @media only screen and (max-width: 600px) {
+   .booknowDiagonostics_banner_section{
+    display: none;
+   }
+      }
+}

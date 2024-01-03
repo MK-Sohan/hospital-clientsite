@@ -1,0 +1,47 @@
+
+
+
+.know_about_nevia_hospital_maincontainer{
+
+
+    .video_image{
+  
+        background-image: url('../../Assets/backgroundimages/hospitalone.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 590px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 259px;
+    
+    }
+    
+    .video_imagetwo{
+      background-image: url('../../Assets/backgroundimages/hospital2.png');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 590px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 259px;
+    }
+    
+    
+    @media only screen and (max-width: 600px) {
+      .video_image{
+    
+    
+       width: 95vw;
+      }
+    
+      .video_imagetwo{
+        
+       width: 95vw;
+      }
+    }
+
+}

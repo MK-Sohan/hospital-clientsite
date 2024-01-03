@@ -1,0 +1,66 @@
+.Tab_Two_MobileCarousel_main_container{
+    @media only screen and (max-width: 644px) {
+        background:white;
+      .bloc-tabs {
+        display: flex;
+        gap: 20px;
+        justify-content: start; 
+        margin-top: 60px; 
+      }
+      .tabs {
+        padding: 1px ;
+        text-align: center;
+        width: 118px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     font-weight: 500;
+     font-size:   16px;
+        cursor: pointer;
+        border: 1px solid #91C1BB;
+        box-sizing: content-box;
+        position: relative;
+        outline: none;        
+      }
+      .tabs:not(:last-child){
+        border-right: 1px solid rgba(0, 0, 0, 0.274);
+      }
+      
+      .active-tabs  {
+        background: #026E5F;
+        border: none;
+        color: white;
+      }
+      button {
+        border: none;
+        color: black#000000 ;
+        font-family: 'Josefin Sans'; 
+      }
+
+      .content {
+        background: white;
+        padding: 20px 0px;
+        display: none;
+      }
+    
+      .active-content {
+        display: block;
+     
+      }
+      .tab_content_images{
+        display: flex;
+
+      }
+      .tab_back_imege{     
+        background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.712), rgba(255, 255, 255, 0.73)),url('../../Assets/backgroundimages/image\ 1.png');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border: solid;
+        width: 137px;
+        font-family: 'Playfair Display'; 
+      color: #000000;
+      }
+      }
+
+}

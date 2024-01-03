@@ -1,0 +1,123 @@
+.image_slider_containerr{
+
+    .slick-slider {
+        position: relative;
+        display: block;
+        box-sizing: border-box;
+        user-select: none;
+        touch-action: pan-y;
+        -webkit-tap-highlight-color: transparent;
+        // padding: 0px 100px;
+        
+      }
+      
+      .slick-list {
+        position: relative;
+        display: block;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+      }
+      
+      .slick-slide > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 300px; /* Customize the height as needed */
+      }
+      
+      .slick-dots {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: fit-content;
+        display: flex !important;
+        justify-content: center;
+      }
+      
+      .slick-dots li button:before {
+        font-size: 10px;
+      }
+      
+      .slick-dots li.slick-active button:before {
+        opacity: 1;
+        color: #fff;
+      }
+      
+      .slick-prev{
+         // margin: 0px 120px;
+         font-size: 0;
+         line-height: 0;
+         position: absolute;
+         top: 0;
+         // left: 10%;
+         left: 10%;
+         display: block;
+         width: 40px;
+         height: 40px;
+         padding: 0;
+         transform: translateY(-50%);
+         cursor: pointer;
+         border: none;
+         outline: none;
+         background: transparent;
+         z-index: 10;
+      }
+      .slick-next {
+        // margin: 0px 120px;
+        font-size: 0;
+        line-height: 0;
+        position: absolute;
+        top: 0;
+        // left: 10%;
+        right: 10%;
+        display: block;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        transform: translateY(-50%);
+        cursor: pointer;
+        border: none;
+        outline: none;
+        background: transparent;
+      }
+      
+      .slick-prev:hover,
+      .slick-next:hover {
+        opacity: 0.8;
+      }
+      
+      .slick-prev:focus,
+      .slick-next:focus {
+        outline: none;
+      }
+      
+      .slick-prev:before,
+      .slick-next:before {
+        font-size: 20px;
+        line-height: 1;
+        color: #000;
+        opacity: 0.75;
+      }
+      
+      .slick-prev:before {
+        content: '←';
+      }
+      
+      .slick-next:before {
+        content: '→';
+      }
+      
+      /* Custom CSS for responsive design */
+      
+      @media screen and (max-width: 698px) {
+        .slick-slide > div {
+        //   height: 200px; /* Customize the height as needed */
+        }
+      }
+      
+
+
+}
