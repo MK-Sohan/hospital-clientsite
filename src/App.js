@@ -32,6 +32,7 @@ import DiagonosticsBookingDetails from "./Components/Diagonostics/DiagonosticsBo
 import FooterTwo from "./Components/Share/Footer/FooterTwo";
 import TotalFeeSection from "./Components/Diagonostics/TotalFeeSection";
 import Practice from "./Components/Practice/Practice";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
@@ -92,6 +93,7 @@ function App() {
       {/* <FooterTwo/> */}
 
       <Footer />
+      <ToastContainer />
     </div>
   );
 }

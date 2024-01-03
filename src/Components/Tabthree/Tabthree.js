@@ -5,7 +5,7 @@ import icon from "../../Assets/icons/Group 9.png";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import { SlCallOut } from "react-icons/sl";
 import { Link } from "react-router-dom";
-
+import img1 from "../../Assets/tabcardsliderimage/1.png";
 const Tabthree = () => {
   const [toggleState, setToggleState] = useState(1);
 

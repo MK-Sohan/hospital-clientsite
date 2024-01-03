@@ -2,25 +2,21 @@ import React, { useState } from "react";
 import "./navbar.scss";
 import logo from "../../../Assets/logo/LOGO14 1.png";
 import { Link } from "react-router-dom";
+import { FaCartPlus } from "react-icons/fa";
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
   return (
     <div>
-      <nav class="hidden lg:block mx-auto  w-full  z-50  bg-[#026E5F]  py-2  text-white shadow-md backdrop-blur-2xl backdrop-saturate-200  lg:py-0">
+      <nav class="hidden lg:block mx-auto  w-full  z-50  bg-[#026E5F]  py-2  text-white shadow-md backdrop-blur-2xl backdrop-saturate-200  lg:py-4">
         <div>
           <div class=" flex items-center justify-around  text-gray-900 ">
-            <a
-              href="#"
-              class=" block cursor-pointer py-1.5 font-sans text-md font-normal leading-normal text-whiteantialiased"
-            >
-              <span>
-                {" "}
-                <Link to="/">
-                  {" "}
-                  <img className="" src={logo} alt="" />
-                </Link>{" "}
-              </span>
-            </a>
+            <span>
+              {" "}
+              <Link to="/">
+                <h1 className="text-4xl font-bold text-white">CarePulse</h1>
+              </Link>{" "}
+            </span>
+
             <ul class="hidden items-center gap-5 lg:flex lg:px-10 lg:justify-center ">
               <li class="block p-1 font-sans text-md font-normal leading-normal text-white antialiased  ">
                 <Link to="/" class="flex items-center">
@@ -59,7 +55,7 @@ const Navbar = () => {
                 </Link>
               </li> */}
             </ul>
-            <div className="">
+            <div className="flex items-center gap-x-3">
               <Link to="/loginpage">
                 <button
                   class="middle none center hidden rounded-2xl bg-transparent border-[1px] py-2 px-8 font-sans text-xs font-bold uppercase text-white shadow-md  transition-all hover:text-black hover:bg-white  active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:inline-block"
@@ -77,6 +73,9 @@ const Navbar = () => {
                 >
                   <span>Register</span>
                 </button>
+              </Link>
+              <Link to="/addToCart" className="text-white text-4xl">
+                <FaCartPlus />
               </Link>
             </div>
 

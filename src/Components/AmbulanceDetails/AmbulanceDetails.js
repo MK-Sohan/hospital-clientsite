@@ -27,6 +27,10 @@ const AmbulanceDetails = () => {
       .then((data) => setNoneacAmbulance(data));
   }, []);
   console.log(ambulance);
+  function makePhoneCall(phoneNumber) {
+    window.location.href = `tel:${phoneNumber}`;
+  }
+
   const timeOptions = [
     { label: "9:00 AM", color: "bg-[#CFCFCF]" },
     { label: "10:00 AM", color: "bg-white" },
@@ -115,7 +119,7 @@ const AmbulanceDetails = () => {
                           Call an Emergency Ambulence
                         </h1>
                         <h1 className="lg:text-[1vw] font-[600] break-normal ">
-                          {val.price}
+                          {val.price} ৳
                         </h1>
                       </div>
                       <div className="mr-10 w-[574px]">
@@ -177,7 +181,7 @@ const AmbulanceDetails = () => {
                           Call an Emergency Ambulence
                         </h1>
                         <h1 className="lg:text-[1vw] font-[600] break-normal ">
-                          {val.price}
+                          {val.price} ৳
                         </h1>
                       </div>
                       <div className="mr-10 w-[574px]">
@@ -197,15 +201,11 @@ const AmbulanceDetails = () => {
                       </div>
 
                       <div className="flex items-center gap-[12px]">
-                        <button className="w-[210px] flex items-center justify-center gap-[13px] text-white text-[20px] font-[500] bg-[#026E5F] py-[12px]  rounded-md">
-                          <a
-                            href="tel:01780605388"
-                            style={{ textDecoration: "none", color: "inherit" }}
-                            className="flex items-center justify-center gap-x-2"
-                          >
-                            <SlCallOut />
-                            01780605388
-                          </a>
+                        <button
+                          className="w-[210px] flex items-center justify-center gap-[13px] text-white text-[20px] font-[500] bg-[#026E5F] py-[12px] rounded-md"
+                          onClick={() => makePhoneCall(val.phone)}
+                        >
+                          {val.phone}
                         </button>
 
                         {/* <Link to="/ambulancebookNowDetails">

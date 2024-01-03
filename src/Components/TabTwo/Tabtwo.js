@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./tabtwo.scss";
 import { Link } from "react-router-dom";
 import { tabtwodata } from "../dummydata";
@@ -8,13 +8,21 @@ import "swiper/css/free-mode";
 import "swiper/css/pagination";
 import { Navigation, Pagination, Autoplay, FreeMode, Keyboard } from "swiper";
 import "swiper/css/navigation";
+import img1 from "../../Assets/tabcardsliderimage/1.png";
 import sliderIcon1 from "../../Assets/icons/hospitaldetailicons/1.png";
 import sliderIcon2 from "../../Assets/icons/hospitaldetailicons/2.png";
 import sliderIcon3 from "../../Assets/icons/hospitaldetailicons/3.png";
 import sliderIcon4 from "../../Assets/icons/hospitaldetailicons/4.png";
 const Tabtwo = () => {
   const [toggleState, setToggleState] = useState(1);
-
+  const [medicine, setMedicine] = useState([]);
+  const [search, setSesrch] = useState("");
+  console.log(search);
+  useEffect(() => {
+    fetch("http://localhost:5000/allmedicine")
+      .then((res) => res.json())
+      .then((data) => setMedicine(data));
+  }, []);
   const toggleTab = (index) => {
     setToggleState(index);
   };
@@ -30,11 +38,7 @@ const Tabtwo = () => {
           </div>
           <div className="containerr pt-[23px]">
             <div className="content-tabs ">
-              <div
-                className={
-                  toggleState === 1 ? "content  active-content" : "content"
-                }
-              >
+              <div>
                 <div className="  py-5 lg:py-0">
                   <Swiper
                     autoplay={{
@@ -71,22 +75,34 @@ const Tabtwo = () => {
                     modules={[Navigation, Autoplay, FreeMode, Keyboard]}
                     className="mySwiper"
                   >
-                    {tabtwodata.map((s) => (
+                    {medicine.map((val) => (
                       <SwiperSlide className=" rounded-sm  ">
-                        <div className="slider_content w-full ">
-                          {/* slider img */}
-                          <div className="">
-                            <img
-                              className="w-[270px] h-[270px] object-contain  mx-auto"
-                              src={s.picture}
-                              loading="lazy"
-                              alt="loading"
-                            />
-                          </div>
-                          <div className="text-black w-full text-lg">
-                            <p>Paracetamol 500mg </p>
-                            <p>10 Tablets </p>
+                        <div className="relative rounded w-[90%]  font-[400] text-[16px] text-black  ">
+                          <img
+                            className="w-[100%] h-[250px] object-cover border-2"
+                            src={val.image}
+                            alt=""
+                          />
+                          <div className="px-1 py-1">
+                            <p>Napa Extra 500mg </p>
+
+                            <p>10 Tablets</p>
                             <p>20 Tk</p>
+                          </div>
+
+                          <div className="flex justify-center items-center mb-3">
+                            <Link to="/drugDetails">
+                              <button className="rounded-3xl w-[104px] h-[31px] text-white font-[500] text-[10px] flex justify-center items-center bg-[#026E5F] ">
+                                Buy Now
+                              </button>
+                            </Link>
+                          </div>
+                          <div className="absolute top-1 right-2 ">
+                            <Link to="/drugDetails">
+                              <button className=" rounded-3xl px-3 h-[21px] text-[10px]  bg-[#FFC408] hover:bg-[#dbbe61]">
+                                Details
+                              </button>
+                            </Link>
                           </div>
                         </div>
                       </SwiperSlide>
