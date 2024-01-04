@@ -3,8 +3,20 @@ import "./navbar.scss";
 import logo from "../../../Assets/logo/LOGO14 1.png";
 import { Link } from "react-router-dom";
 import { FaCartPlus } from "react-icons/fa";
+import { useQuery } from "react-query";
+import Loading from "../../Loading/Loading";
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
+  const {
+    data: product,
+    refetch,
+    isLoading,
+  } = useQuery("pcart", () =>
+    fetch("http://localhost:5000/cartallproducts").then((res) => res.json())
+  );
+  if (isLoading) {
+    return <Loading></Loading>;
+  }
   return (
     <div>
       <nav class="hidden lg:block mx-auto  w-full  z-50  bg-[#026E5F]  py-2  text-white shadow-md backdrop-blur-2xl backdrop-saturate-200  lg:py-4">
@@ -75,7 +87,15 @@ const Navbar = () => {
                 </button>
               </Link>
               <Link to="/addToCart" className="text-white text-4xl">
-                <FaCartPlus />
+                <button className="btn btn-ghost btn-circle">
+                  <div className="indicator">
+                    <FaCartPlus className="text-4xl" />
+
+                    <span className="badge h-[60%] w-[60%] badge-neutral indicator-item text-white">
+                      {product.length}{" "}
+                    </span>
+                  </div>
+                </button>
               </Link>
             </div>
 

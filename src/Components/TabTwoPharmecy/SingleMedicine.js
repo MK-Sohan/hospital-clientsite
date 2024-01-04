@@ -50,20 +50,20 @@ const SingleMedicine = ({ value }) => {
         </div>
 
         <div className="flex justify-center items-center mb-3">
-          <Link to="/drugDetails">
+          <Link to={`/drugDetails/${value._id}`}>
             <button className="rounded-3xl w-[104px] h-[31px] text-white font-[500] text-[10px] flex justify-center items-center bg-[#026E5F] ">
               Buy Now
             </button>
           </Link>
         </div>
-        <div className="absolute top-1 right-2 ">
+        {/* <div className="absolute top-1 right-2 ">
           <button
             onClick={() => handleAddtocart(value)}
             className=" rounded-3xl flex items-center justify-center gap-x-1 px-3 h-[21px] text-[13px]  bg-[#FFC408] hover:bg-[#dbbe61]"
           >
             Add to Cart <FaCartPlus />
           </button>
-        </div>
+        </div> */}
       </div>
     </div>
   );

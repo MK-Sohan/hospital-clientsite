@@ -91,19 +91,19 @@ const Tabtwo = () => {
                           </div>
 
                           <div className="flex justify-center items-center mb-3">
-                            <Link to="/drugDetails">
+                            <Link to={`/drugDetails/${val._id}`}>
                               <button className="rounded-3xl w-[104px] h-[31px] text-white font-[500] text-[10px] flex justify-center items-center bg-[#026E5F] ">
                                 Buy Now
                               </button>
                             </Link>
                           </div>
-                          <div className="absolute top-1 right-2 ">
+                          {/* <div className="absolute top-1 right-2 ">
                             <Link to="/drugDetails">
                               <button className=" rounded-3xl px-3 h-[21px] text-[10px]  bg-[#FFC408] hover:bg-[#dbbe61]">
                                 Details
                               </button>
                             </Link>
-                          </div>
+                          </div> */}
                         </div>
                       </SwiperSlide>
                     ))}

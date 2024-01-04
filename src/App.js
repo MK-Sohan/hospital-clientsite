@@ -75,7 +75,10 @@ function App() {
           path="/ambulancebookNowDetails"
           element={<AmbulanceBooknowDetails />}
         ></Route>
-        <Route path="/drugDetails" element={<Drugdetails />}></Route>
+        <Route
+          path="/drugDetails/:medicineId"
+          element={<Drugdetails />}
+        ></Route>
         <Route path="/addToCart" element={<AddToCart />}></Route>
         <Route path="/checkout" element={<Checkout />}></Route>
         <Route path="/totalFee" element={<TotalFeeSection />}></Route>

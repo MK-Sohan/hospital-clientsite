@@ -6,13 +6,8 @@ import OrderDeleteModal from "./OrderDeleteModal";
 import { useQuery } from "react-query";
 import Loading from "../Loading/Loading";
 const AddToCart = () => {
-  // const [product, setProduct] = useState([]);
   const [orderdelete, setOrderdelete] = useState(null);
-  // useEffect(() => {
-  //   fetch("http://localhost:5000/cartallproducts")
-  //     .then((res) => res.json())
-  //     .then((data) => setProduct(data));
-  // }, []);
+
   const {
     data: product,
     refetch,
