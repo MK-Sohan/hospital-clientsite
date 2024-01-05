@@ -5,8 +5,15 @@ import { Link } from "react-router-dom";
 import { FaCartPlus } from "react-icons/fa";
 import { useQuery } from "react-query";
 import Loading from "../../Loading/Loading";
+import app from "../../../firebase.init";
+import { useAuthState, useSignOut } from "react-firebase-hooks/auth";
+import { getAuth } from "firebase/auth";
+const auth = getAuth(app);
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
+  const [user, loading, error] = useAuthState(auth);
+  const [signOut] = useSignOut(auth);
+
   const {
     data: product,
     refetch,
@@ -68,31 +75,50 @@ const Navbar = () => {
               </li> */}
             </ul>
             <div className="flex items-center gap-x-3">
-              <Link to="/loginpage">
+              {user ? (
                 <button
-                  class="middle none center hidden rounded-2xl bg-transparent border-[1px] py-2 px-8 font-sans text-xs font-bold uppercase text-white shadow-md  transition-all hover:text-black hover:bg-white  active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:inline-block"
+                  onClick={async () => {
+                    const success = await signOut();
+                    if (success) {
+                      alert("You are sign out");
+                    }
+                  }}
+                  class="ml-5 middle none center hidden rounded-2xl bg-red-500 border-[1px] py-2 px-8 font-sans text-xs font-bold uppercase text-white shadow-md  transition-all hover:text-black hover:bg-white  active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:inline-block"
                   type="button"
                   data-ripple-light="true"
                 >
-                  <span>Login</span>
+                  <span>Sign Out</span>
                 </button>
-              </Link>
-              <Link to="/loginpage">
-                <button
-                  class="ml-5 middle none center hidden rounded-2xl bg-transparent border-[1px] py-2 px-8 font-sans text-xs font-bold uppercase text-white shadow-md  transition-all hover:text-black hover:bg-white  active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:inline-block"
-                  type="button"
-                  data-ripple-light="true"
-                >
-                  <span>Register</span>
-                </button>
-              </Link>
+              ) : (
+                <div className="">
+                  <Link to="/loginpage">
+                    <button
+                      class="middle none center hidden rounded-2xl bg-transparent border-[1px] py-2 px-8 font-sans text-xs font-bold uppercase text-white shadow-md  transition-all hover:text-black hover:bg-white  active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:inline-block"
+                      type="button"
+                      data-ripple-light="true"
+                    >
+                      <span>Login</span>
+                    </button>
+                  </Link>
+                  <Link to="/signUppage">
+                    <button
+                      class="ml-5 middle none center hidden rounded-2xl bg-transparent border-[1px] py-2 px-8 font-sans text-xs font-bold uppercase text-white shadow-md  transition-all hover:text-black hover:bg-white  active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:inline-block"
+                      type="button"
+                      data-ripple-light="true"
+                    >
+                      <span>Register</span>
+                    </button>
+                  </Link>
+                </div>
+              )}
+
               <Link to="/addToCart" className="text-white text-4xl">
                 <button className="btn btn-ghost btn-circle">
                   <div className="indicator">
                     <FaCartPlus className="text-4xl" />
 
                     <span className="badge h-[60%] w-[60%] badge-neutral indicator-item text-white">
-                      {product.length}{" "}
+                      {product?.length}{" "}
                     </span>
                   </div>
                 </button>
@@ -120,42 +146,6 @@ const Navbar = () => {
               </span>
             </button>
           </div>
-          {/* <div
-      class="block h-0 w-full basis-full overflow-hidden text-blue-gray-900 transition-all duration-300 ease-in lg:hidden"
-      data-collapse="navbar"
-    >
-      <div class="container mx-auto pb-2">
-        <ul class="mt-2 mb-4 flex flex-col gap-2">
-          <li class="block p-1 font-sans text-sm font-normal leading-normal text-whiteantialiased">
-            <a class="flex items-center" href="#">
-            DOCTOR
-            </a>
-          </li>
-          <li class="block p-1 font-sans text-sm font-normal leading-normal text-whiteantialiased">
-            <a class="flex items-center" href="#">
-            APPOINTMENT
-            </a>
-          </li>
-          <li class="block p-1 font-sans text-sm font-normal leading-normal text-whiteantialiased">
-            <a class="flex items-center" href="#">
-            SERVICE
-            </a>
-          </li>
-          <li class="block p-1 font-sans text-sm font-normal leading-normal text-whiteantialiased">
-            <a class="flex items-center" href="#">
-              Docs
-            </a>
-          </li>
-        </ul>
-        <button
-          class="middle none center mb-2 block w-full rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-2 px-4 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-          type="button"
-          data-ripple-light="true"
-        >
-          <span>Buy Now</span>
-        </button>
-      </div>
-    </div> */}
         </div>
       </nav>
 

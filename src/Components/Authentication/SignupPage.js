@@ -12,7 +12,7 @@ import {
   useCreateUserWithEmailAndPassword,
 } from "react-firebase-hooks/auth";
 
-const auth = getAuth();
+const auth = getAuth(app);
 
 const SignupPage = () => {
   const [email, setEmail] = useState("");
@@ -57,6 +57,7 @@ const SignupPage = () => {
             className="bg-transparent focus:outline-none focus:bg-transparent"
             type="text"
             name="email"
+            autocomplete="off"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="E-mail :"
@@ -65,18 +66,20 @@ const SignupPage = () => {
             className="bg-transparent focus:outline-none focus:bg-transparent"
             type="password"
             name="password"
+            autocomplete="off"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password :"
           />
-          <input
+          {/* <input
             className="bg-transparent focus:outline-none focus:bg-transparent"
             type="password"
             name="password2"
+            autocomplete="off"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Confirm Password : "
-          />
+          /> */}
 
           {/* <button type="submit" name="signup_submit" value="Signup" /> */}
           <button
@@ -101,13 +104,13 @@ const SignupPage = () => {
               Continue with Google{" "}
             </button>
 
-            <button
+            {/* <button
               onClick={() => signInWithFacebook()}
               className="social_button flex items-center justify-center gap-1"
             >
               <img src={facebook} alt="" />
               Continue with Facebook
-            </button>
+            </button> */}
           </div>
           <p className="text-[#F9F9F9] text-[16px] font-[400] mt-5 tracking-wider">
             Already have an account?{" "}

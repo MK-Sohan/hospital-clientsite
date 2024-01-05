@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import img1 from "../../Assets/tabcardsliderimage/th 2.png";
 import { Link, useParams } from "react-router-dom";
-
+import app from "../../firebase.init";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { getAuth } from "firebase/auth";
+const auth = getAuth(app);
 const Drugdetails = () => {
   const [quantity, setQuantity] = useState(1);
-
+  const [user, loading, error] = useAuthState(auth);
   const handleIncrement = () => {
     setQuantity(quantity + 1);
   };
@@ -37,6 +40,7 @@ const Drugdetails = () => {
       company: p.company,
       about: p.about,
       quantity: quantity,
+      email: user.email,
     };
     console.log(cartProduct);
     fetch(`http://localhost:5000/cart/${p._id}`, {

@@ -33,6 +33,7 @@ import FooterTwo from "./Components/Share/Footer/FooterTwo";
 import TotalFeeSection from "./Components/Diagonostics/TotalFeeSection";
 import Practice from "./Components/Practice/Practice";
 import { ToastContainer } from "react-toastify";
+import RequireAuth from "./Components/Authentication/RequireAuth";
 
 function App() {
   return (
@@ -57,7 +58,14 @@ function App() {
         <Route path="/signUppage" element={<SignupPage />}></Route>
         <Route path="/loginpage" element={<LoginPage />}></Route>
         <Route path="/resetpass" element={<ResetPass />}></Route>
-        <Route path="/allpackages" element={<SeeallPackages />}></Route>
+        <Route
+          path="/allpackages"
+          element={
+            <RequireAuth>
+              <SeeallPackages />
+            </RequireAuth>
+          }
+        ></Route>
         <Route path="/packageDetail" element={<PackageDetail />}></Route>
         <Route path="/diagonosticpage" element={<Diagonostics />}></Route>
         <Route
@@ -69,8 +77,22 @@ function App() {
           element={<Appointmentdoctor />}
         ></Route>
         <Route path="/OTTP" element={<Ottp />}></Route>
-        <Route path="/TabTwoPharmecy" element={<TabTwoPharmecy />}></Route>
-        <Route path="/ambulanceDetails" element={<AmbulanceDetails />}></Route>
+        <Route
+          path="/TabTwoPharmecy"
+          element={
+            <RequireAuth>
+              <TabTwoPharmecy />
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path="/ambulanceDetails"
+          element={
+            <RequireAuth>
+              <AmbulanceDetails />
+            </RequireAuth>
+          }
+        ></Route>
         <Route
           path="/ambulancebookNowDetails"
           element={<AmbulanceBooknowDetails />}
@@ -79,7 +101,14 @@ function App() {
           path="/drugDetails/:medicineId"
           element={<Drugdetails />}
         ></Route>
-        <Route path="/addToCart" element={<AddToCart />}></Route>
+        <Route
+          path="/addToCart"
+          element={
+            <RequireAuth>
+              <AddToCart />
+            </RequireAuth>
+          }
+        ></Route>
         <Route path="/checkout" element={<Checkout />}></Route>
         <Route path="/totalFee" element={<TotalFeeSection />}></Route>
         <Route
