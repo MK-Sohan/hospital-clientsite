@@ -13,6 +13,7 @@ import { getAuth } from "firebase/auth";
 import { toast } from "react-toastify";
 import Loading from "../Loading/Loading";
 import { useForm } from "react-hook-form";
+import useToken from "../Hooks/useToken";
 const auth = getAuth();
 const LoginPage = () => {
   const [email, setEmail] = useState("");
@@ -22,10 +23,6 @@ const LoginPage = () => {
   const [signInWithGoogle, guser, gloading, gerror] = useSignInWithGoogle(auth);
   const [user] = useAuthState(auth);
 
-  let location = useLocation();
-  const navigate = useNavigate();
-  let from = location.state?.from?.pathname || "/";
-
   const {
     register,
     formState: { errors },
@@ -34,14 +31,17 @@ const LoginPage = () => {
 
   const onSubmit = (data) => {
     signInWithEmailAndPassword(data.email, data.password);
+    toast("Successfully Loged in");
   };
-
+  let location = useLocation();
+  const navigate = useNavigate();
+  let from = location.state?.from?.pathname || "/";
+  const [token] = useToken(euser || guser);
   useEffect(() => {
     if (euser || guser) {
       navigate(from, { replace: true });
-      toast("Successfully Loged in");
     }
-  }, [user, from, navigate]);
+  }, [euser, guser, from, navigate]);
 
   let signInError;
   if (error || gerror) {

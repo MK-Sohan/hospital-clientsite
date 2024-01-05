@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./navbar.scss";
 import logo from "../../../Assets/logo/LOGO14 1.png";
 import { Link } from "react-router-dom";
@@ -15,8 +15,8 @@ const Navbar = () => {
   const [user, loading, error] = useAuthState(auth);
   const [signOut] = useSignOut(auth);
   const cartuser = user?.email;
-  // const [product] = useCartitem();
-  // console.log(product)
+  // const [product, refetch] = useCartitem();
+
   const {
     data: product,
     refetch,
@@ -26,6 +26,11 @@ const Navbar = () => {
       res.json()
     )
   );
+  useEffect(() => {
+    if (product) {
+      refetch();
+    }
+  }, []);
   if (isLoading) {
     return <Loading></Loading>;
   }
@@ -68,9 +73,9 @@ const Navbar = () => {
                 </a>
               </li> */}
               <li class="block p-1 font-sans text-md font-normal leading-normal text-white antialiased">
-                <a class="flex items-center" href="#">
+                <Link to="/dashboard" class="flex items-center" href="#">
                   DASHBOARD
-                </a>
+                </Link>
               </li>
 
               {/* <li class="block p-1 font-sans text-md font-normal leading-normal text-white antialiased  ">

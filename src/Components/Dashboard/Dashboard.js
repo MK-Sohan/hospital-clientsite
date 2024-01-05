@@ -35,7 +35,7 @@ const Dashboard = () => {
               } text-white mb-4`}
             >
               <Link
-                to="/dashboard/myprofile"
+                to="/dashboard"
                 onClick={() => handleButtonClick("myProfile")}
               >
                 My Profile

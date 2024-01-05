@@ -10,10 +10,12 @@ import {
   useSignInWithFacebook,
   useSignInWithGoogle,
   useCreateUserWithEmailAndPassword,
+  useUpdateProfile,
 } from "react-firebase-hooks/auth";
 import { toast } from "react-toastify";
 import Loading from "../Loading/Loading";
 import { useForm } from "react-hook-form";
+import useToken from "../Hooks/useToken";
 
 const auth = getAuth(app);
 
@@ -24,10 +26,17 @@ const SignupPage = () => {
     useCreateUserWithEmailAndPassword(auth);
   const [signInWithGoogle, guser, gloading, gerror] = useSignInWithGoogle(auth);
   const [signInWithFacebook, fbloading, fberror] = useSignInWithFacebook(auth);
+  const [updateProfile, updating, updateerror] = useUpdateProfile(auth);
+
   let location = useLocation();
   const navigate = useNavigate();
+  const [token] = useToken(user || guser);
   let from = location.state?.from?.pathname || "/";
-
+  useEffect(() => {
+    if (user || guser) {
+      navigate(from, { replace: true });
+    }
+  }, [user, guser, from, navigate]);
   const {
     register,
     formState: { errors },
@@ -39,15 +48,12 @@ const SignupPage = () => {
     const email = data.email;
     const password = data.password;
     await createUserWithEmailAndPassword(email, password);
+    await updateProfile({ displayName: name });
     toast("Successfully Registered");
   };
   // if (user || guser) {
   //   toast("Successfully Registered");
   // }
-
-  if (user || guser) {
-    navigate("/");
-  }
 
   console.log(email, password, user);
   let signInError;
@@ -80,7 +86,7 @@ const SignupPage = () => {
                   <input
                     type="text"
                     placeholder="Your Name"
-                    className="input input-bordered bg-transparent border-[1px] border-black w-full max-w-xs "
+                    className="text-black input input-bordered bg-transparent border-[1px] border-black w-full max-w-xs "
                     {...register("name", {
                       required: {
                         value: true,
@@ -104,7 +110,7 @@ const SignupPage = () => {
                   <input
                     type="email"
                     placeholder="Your Email"
-                    className="bg-transparent border-[1px] border-black input input-bordered w-full max-w-xs"
+                    className="bg-transparent border-[1px] text-black border-black input input-bordered w-full max-w-xs"
                     {...register("email", {
                       required: {
                         value: true,
@@ -137,7 +143,7 @@ const SignupPage = () => {
                   <input
                     type="password"
                     placeholder="Password"
-                    className=" bg-transparent border-[1px] border-black input input-bordered w-full max-w-xs"
+                    className=" bg-transparent border-[1px] text-black border-black input input-bordered w-full max-w-xs"
                     {...register("password", {
                       required: {
                         value: true,

@@ -20,6 +20,9 @@ const Doctors = () => {
   const handleDetail = (id) => {
     navigate("/doctordetail/" + id);
   };
+  const handleDoctorappointmentform = (id) => {
+    navigate("/appointmentform/" + id);
+  };
   return (
     <div className="doctors_main_container flex flex-col lg:flex-row gap-[10px] justify-center  ">
       <div className="flex flex-col ">
@@ -116,7 +119,7 @@ const Doctors = () => {
                       className="flex flex-col items-center gap-y-2 py-2
 w-full"
                     >
-                      <Link to="/appointmentDoctor" className="w-[100%]">
+                      <Link to="/appointmentform" className="w-[100%]">
                         <button className="btn btn-accent w-[100%]">
                           Get Appointment
                         </button>
@@ -150,11 +153,12 @@ w-full"
                   </div>
                   <div className="hidden lg:block">
                     <div className="flex  lg:gap-[5px] lg:mt-[85px]">
-                      <Link to="/appointmentDoctor" className="">
-                        <button className="btn bg-[#91C1BB] rounded-3xl lg:px-5 text-[12px] lg:text-[16px]  font-[400]">
-                          Get Appointment
-                        </button>
-                      </Link>
+                      <button
+                        onClick={() => handleDoctorappointmentform(doctor._id)}
+                        className="btn bg-[#91C1BB] rounded-3xl lg:px-5 text-[12px] lg:text-[16px]  font-[400]"
+                      >
+                        Get Appointment
+                      </button>
 
                       <button
                         onClick={() => handleDetail(doctor._id)}

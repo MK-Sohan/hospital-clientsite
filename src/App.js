@@ -62,7 +62,7 @@ function App() {
             </RequireAuth>
           }
         >
-          <Route path="myprofile" element={<MyProfile />}></Route>
+          <Route index element={<MyProfile />}></Route>
           <Route path="allusers" element={<Allusers />}></Route>
         </Route>
 
@@ -70,7 +70,10 @@ function App() {
           path="/doctordetail/:doctorId"
           element={<Doctordetails />}
         ></Route>
-        <Route path="/appointmentform" element={<Formappointment />}></Route>
+        <Route
+          path="/appointmentform/:doctorId"
+          element={<Formappointment />}
+        ></Route>
         <Route path="/selecttest" element={<SelectTest />}></Route>
         <Route
           path="/selectdiagonostic"
