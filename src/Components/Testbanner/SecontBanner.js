@@ -66,8 +66,8 @@ const SecontBanner = () => {
   };
 
   return (
-    <div className="Secound_banner_container_wrapper">
-      <div className="hidden lg:block relative secondbanner_container py-5">
+    <div className="Secound_banner_container_wrapper h-[70vh]">
+      <div className="hidden h-[100%] lg:block relative secondbanner_container py-5">
         {/* Sliding background image */}
         {images.map((image, index) => (
           <div
@@ -85,11 +85,11 @@ const SecontBanner = () => {
         ))}
 
         {/* Left section with text */}
-        <div className="relative flex w-full justify-evenly  ">
+        <div className="relative flex w-full justify-evenly items-center pt-[100px]">
           <div className="lg:text-left">
             <div class="banner_left_side ">
-              <h1 class="mt-[50px] text-start text-2xl lg:text-2xl lg:w-[460px] font-bold lg:mb-[30px] text-white">
-                We Provide The Best Hospital Service. <br /> Why Trust Us?
+              <h1 class=" text-start text-2xl lg:text-2xl lg:w-[100%] font-bold lg:mb-[30px] text-white">
+                We Provide The Best Hospital Service. Why Trust Us?
               </h1>
               {/* ------------------------------dropdown------------------------------------- */}
 
@@ -100,16 +100,8 @@ const SecontBanner = () => {
           </div>
 
           {/* -----------------banner right side-------------- */}
-          <div class="banner_right_side flex flex-col  gap-4 lg:flex-row  ">
+          <div class="banner_right_side flex flex-col items-center   gap-4 lg:flex-row  ">
             <div class="banner_sub_left_side  flex flex-col gap-3">
-              {/* <Link to='/doctors' class="banner_card w-[15vw] h-auto flex justify-evenly px-[20px] py-[20px] rounded items-center gap-3 bg-[#94bfb9b2]">
-                <div class="banner_card_chield_img bg-white h-[80px] w-[80px] rounded-full flex justify-center items-center">
-                  <img src={icon1} alt="" />
-                </div>
-                <div class="banner_card_details w-[70px] text-[1.0999999999999999vw] font-bold">
-                  Find <br /> A Best Doctor
-                </div>
-              </Link> */}
               <Link
                 to="/doctors"
                 class="banner_card w-[15vw] h-auto flex justify-evenly px-[20px] py-[20px] rounded items-center gap-3 bg-[#94bfb9b2]"

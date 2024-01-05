@@ -45,7 +45,7 @@ const SingleCarts = ({ value, setOrderdelete, refetch }) => {
     })
       .then((response) => response.json())
       .then((json) => {
-        alert("Item aded to the cart");
+        toast("Item aded to the cart");
       });
   };
   return (

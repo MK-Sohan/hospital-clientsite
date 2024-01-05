@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import app from "../../firebase.init";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { getAuth } from "firebase/auth";
+import { toast } from "react-toastify";
 const auth = getAuth(app);
 const Drugdetails = () => {
   const [quantity, setQuantity] = useState(1);
@@ -52,7 +53,7 @@ const Drugdetails = () => {
     })
       .then((response) => response.json())
       .then((json) => {
-        alert("Item aded to the cart");
+        toast.success("Item aded to the cart");
       });
   };
   return (

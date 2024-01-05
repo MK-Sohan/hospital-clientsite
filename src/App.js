@@ -32,9 +32,12 @@ import DiagonosticsBookingDetails from "./Components/Diagonostics/DiagonosticsBo
 import FooterTwo from "./Components/Share/Footer/FooterTwo";
 import TotalFeeSection from "./Components/Diagonostics/TotalFeeSection";
 import Practice from "./Components/Practice/Practice";
-import { ToastContainer } from "react-toastify";
 import RequireAuth from "./Components/Authentication/RequireAuth";
-
+import Dashboard from "./Components/Dashboard/Dashboard";
+import MyProfile from "./Components/Dashboard/MyProfile";
+import Allusers from "./Components/Dashboard/Allusers";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function App() {
   return (
     <div className="bg-[#F5F5F5] app relative">
@@ -43,7 +46,25 @@ function App() {
       <Routes>
         <Route path="/" element={<Homepage></Homepage>}></Route>
 
-        <Route path="/doctors" element={<Doctors />}></Route>
+        <Route
+          path="/doctors"
+          element={
+            <RequireAuth>
+              <Doctors />
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path="/dashboard"
+          element={
+            <RequireAuth>
+              <Dashboard />
+            </RequireAuth>
+          }
+        >
+          <Route path="myprofile" element={<MyProfile />}></Route>
+          <Route path="allusers" element={<Allusers />}></Route>
+        </Route>
 
         <Route
           path="/doctordetail/:doctorId"
@@ -122,10 +143,9 @@ function App() {
           element={<DiagonosticsBookingDetails />}
         ></Route>
       </Routes>
-      {/* <FooterTwo/> */}
 
       <Footer />
-      {/* <ToastContainer /> */}
+      <ToastContainer />
     </div>
   );
 }

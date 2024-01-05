@@ -5,15 +5,24 @@ import SingleCarts from "./SingleCarts";
 import OrderDeleteModal from "./OrderDeleteModal";
 import { useQuery } from "react-query";
 import Loading from "../Loading/Loading";
+import app from "../../firebase.init";
+import { useAuthState, useSignOut } from "react-firebase-hooks/auth";
+import { getAuth } from "firebase/auth";
+import { toast } from "react-toastify";
+const auth = getAuth(app);
 const AddToCart = () => {
   const [orderdelete, setOrderdelete] = useState(null);
-
+  const [user, loading, error] = useAuthState(auth);
+  console.log(user.email);
+  const cartuser = user?.email;
   const {
     data: product,
     refetch,
     isLoading,
   } = useQuery("pcart", () =>
-    fetch("http://localhost:5000/cartallproducts").then((res) => res.json())
+    fetch(`http://localhost:5000/cartallproducts/${cartuser}`).then((res) =>
+      res.json()
+    )
   );
   if (isLoading) {
     return <Loading></Loading>;
@@ -24,7 +33,7 @@ const AddToCart = () => {
         <h1 class="mb-10 text-center text-2xl font-bold">Cart Items</h1>
         <div class="mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0">
           <div class="rounded-lg md:w-2/3">
-            {product.map((value) => (
+            {product?.map((value) => (
               <SingleCarts
                 value={value}
                 setOrderdelete={setOrderdelete}

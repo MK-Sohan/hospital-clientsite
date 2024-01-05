@@ -11,6 +11,8 @@ import {
 import "./loginpage.scss";
 import { getAuth } from "firebase/auth";
 import { toast } from "react-toastify";
+import Loading from "../Loading/Loading";
+import { useForm } from "react-hook-form";
 const auth = getAuth();
 const LoginPage = () => {
   const [email, setEmail] = useState("");
@@ -23,90 +25,134 @@ const LoginPage = () => {
   let location = useLocation();
   const navigate = useNavigate();
   let from = location.state?.from?.pathname || "/";
+
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm();
+
+  const onSubmit = (data) => {
+    signInWithEmailAndPassword(data.email, data.password);
+  };
+
   useEffect(() => {
-    if (user) {
+    if (euser || guser) {
       navigate(from, { replace: true });
+      toast("Successfully Loged in");
     }
   }, [user, from, navigate]);
-  if (error) {
-    return (
-      <div>
-        <p>Error: {error.message}</p>
-      </div>
+
+  let signInError;
+  if (error || gerror) {
+    signInError = (
+      <p className="text-red-600 text-[18px] py-3">
+        {error?.message || gerror?.message}
+      </p>
     );
   }
-  if (loading) {
-    return <p>Loading...</p>;
-  }
-  if (user) {
-    toast("success");
+
+  if (loading || gloading) {
+    return <Loading></Loading>;
   }
   return (
-    <div className="">
-      <div className="login_page_main_container">
-        <div className="login-box">
-          <div class="left mt-20">
-            <div
-              className="flex justify-center items-center flex-col
-  mb-6"
-            >
-              <h1>Welcome to Sign in</h1>
-              <img src={logo} alt="" />
-            </div>
+    <div className="login-box">
+      <div className="">
+        <div className="flex h-screen justify-center   items-start pt-[100px] ">
+          <div className="card w-96  shadow-2xl ">
+            <div className="card-body rounded-sm bg-base-100">
+              <h2 className="text-center text-black text-2xl font-bold">
+                Login
+              </h2>
+              <form onSubmit={handleSubmit(onSubmit)}>
+                <div className="form-control w-full max-w-xs">
+                  <label className="label">
+                    <span className="label-text">Email</span>
+                  </label>
+                  <input
+                    type="email"
+                    placeholder="Your Email"
+                    className="text-black bg-transparent border-[1px] border-black input input-bordered w-full max-w-xs"
+                    {...register("email", {
+                      required: {
+                        value: true,
+                        message: "Email is Required",
+                      },
+                      pattern: {
+                        value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
+                        message: "Provide a valid Email",
+                      },
+                    })}
+                  />
 
-            {/* <input type="text" name="username" placeholder="Username" /> */}
-            <input
-              className="bg-transparent focus:outline-none focus:bg-transparent"
-              type="text"
-              name="email"
-              autocomplete="off"
-              placeholder="E-mail :"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <input
-              className="bg-transparent focus:outline-none focus:bg-transparent"
-              type="password"
-              name="password"
-              placeholder="Password :"
-              value={password}
-              autocomplete="off"
-              onChange={(e) => setPassword(e.target.value)}
-            />
+                  <label className="label">
+                    {errors.email?.type === "required" && (
+                      <span className="label-text-alt text-red-500">
+                        {errors.email.message}
+                      </span>
+                    )}
+                    {errors.email?.type === "pattern" && (
+                      <span className="label-text-alt text-red-500">
+                        {errors.email.message}
+                      </span>
+                    )}
+                  </label>
+                </div>
+                <div className="form-control w-full max-w-xs">
+                  <label className="label">
+                    <span className="label-text">Password</span>
+                  </label>
+                  <input
+                    type="password"
+                    placeholder="Password"
+                    className="text-black bg-transparent border-[1px] border-black input input-bordered w-full max-w-xs"
+                    {...register("password", {
+                      required: {
+                        value: true,
+                        message: "Password is Required",
+                      },
+                      minLength: {
+                        value: 6,
+                        message: "Password Must be 6 characters or longer",
+                      },
+                    })}
+                  />
+                  <label className="label">
+                    {errors.password?.type === "required" && (
+                      <span className="label-text-alt text-red-500">
+                        {errors.password.message}
+                      </span>
+                    )}
+                    {errors.password?.type === "minLength" && (
+                      <span className="label-text-alt text-red-500">
+                        {errors.password.message}
+                      </span>
+                    )}
+                  </label>
+                </div>
 
-            <p className="text-[#F9F9F9] text-[16px] font-[400] text-end">
-              {" "}
-              <Link to="/resetpass">Forgot Password?</Link>{" "}
-            </p>
-            <div className="flex flex-col items-center">
-              <button
-                onClick={() => signInWithEmailAndPassword(email, password)}
-                className="loginbutton"
-              >
-                Sign in
-              </button>
-              <p>or</p>
-              <div className="border-[1px] rounded-3xl px-5 py-1 mt-5 google_facebook_button flex justify-center items-center gap-[17px]">
-                <button
-                  onClick={() => signInWithGoogle()}
-                  className="social_button flex items-center justify-center gap-1"
-                >
-                  {" "}
-                  <img src={google} alt="" />
-                  Sign in with Google{" "}
-                </button>
-              </div>
-
-              <p className="text-[#F9F9F9] text-[16px] font-[400] mt-5 ">
-                {" "}
-                <span className="opacity-[0.7] tracking-wider">
-                  Haven’t any account?
-                </span>{" "}
-                <span className="text-[#F9F9F9] text-[16px] font-[600] tracking-wider">
-                  {" "}
-                  <Link to="/signUppage"> Signup</Link>{" "}
-                </span>
+                {signInError}
+                <input
+                  className="btn w-full max-w-xs text-black"
+                  type="submit"
+                  value="Login"
+                />
+              </form>
+              <p>
+                <small className="text-black font-bold text-sm">
+                  New to MK-Ecommerce ?{" "}
+                  <Link className="text-green-700 font-bold" to="/signUppage">
+                    Please Register
+                  </Link>
+                </small>
               </p>
+              <div className="divider text-black">OR</div>
+              <button
+                onClick={() => signInWithGoogle()}
+                className="btn btn-outline hover:bg-green-500 hover:border-0"
+              >
+                Continue with Google
+              </button>
             </div>
           </div>
         </div>

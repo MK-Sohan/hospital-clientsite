@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./signup.scss";
 import logo from "../../Assets/logo/LOGO12 2.png";
 import google from "../../Assets/icons/icons8-google-23.png";
 import facebook from "../../Assets/icons/icons8-facebook-23.png";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { getAuth } from "firebase/auth";
 import app from "../../firebase.init";
 import {
@@ -11,114 +11,182 @@ import {
   useSignInWithGoogle,
   useCreateUserWithEmailAndPassword,
 } from "react-firebase-hooks/auth";
+import { toast } from "react-toastify";
+import Loading from "../Loading/Loading";
+import { useForm } from "react-hook-form";
 
 const auth = getAuth(app);
 
 const SignupPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [createUserWithEmailAndPassword, emailuser, emailloading, emailerror] =
+  const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
-  const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+  const [signInWithGoogle, guser, gloading, gerror] = useSignInWithGoogle(auth);
   const [signInWithFacebook, fbloading, fberror] = useSignInWithFacebook(auth);
+  let location = useLocation();
+  const navigate = useNavigate();
+  let from = location.state?.from?.pathname || "/";
 
-  console.log(email, password, emailuser);
-  if (error) {
-    return (
-      <div>
-        <p>Error: {error.message}</p>
-      </div>
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm();
+
+  const onSubmit = async (data) => {
+    const name = data.name;
+    const email = data.email;
+    const password = data.password;
+    await createUserWithEmailAndPassword(email, password);
+    toast("Successfully Registered");
+  };
+  // if (user || guser) {
+  //   toast("Successfully Registered");
+  // }
+
+  if (user || guser) {
+    navigate("/");
+  }
+
+  console.log(email, password, user);
+  let signInError;
+  if (error || gerror) {
+    signInError = (
+      <p className="text-red-600 text-[18px] py-3">
+        {error?.message || gerror?.message}
+      </p>
     );
   }
-  if (loading) {
-    return <p>Loading...</p>;
+
+  if (loading || gloading) {
+    return <Loading></Loading>;
   }
-  if (user) {
-    return (
-      <div>
-        <p>Registered User: {user.user.email}</p>
-      </div>
-    );
-  }
+
   return (
-    <div className="signup_form_container ">
-      <div className="login-box">
-        <div class="left">
-          <div
-            className="flex justify-center items-center flex-col
-  mb-6"
-          >
-            <h1>Welcome to Signup</h1>
-            <img src={logo} alt="" />
+    <div className="login-box">
+      <div className="register-container   ">
+        <div className="flex h-screen justify-center pt-[100px]    items-start ">
+          <div className="card w-96  shadow-2xl ">
+            <div className="card-body rounded bg-base-100">
+              <h2 className="text-center text-black text-2xl font-bold">
+                Register
+              </h2>
+              <form onSubmit={handleSubmit(onSubmit)}>
+                <div className="form-control w-full max-w-xs">
+                  <label className="label">
+                    <span className="label-text">Name</span>
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Your Name"
+                    className="input input-bordered bg-transparent border-[1px] border-black w-full max-w-xs "
+                    {...register("name", {
+                      required: {
+                        value: true,
+                        message: "Name is Required",
+                      },
+                    })}
+                  />
+
+                  <label className="label">
+                    {errors.name?.type === "required" && (
+                      <span className="label-text-alt text-red-500">
+                        {errors.name.message}
+                      </span>
+                    )}
+                  </label>
+                </div>
+                <div className="form-control w-full max-w-xs">
+                  <label className="label">
+                    <span className="label-text">Email</span>
+                  </label>
+                  <input
+                    type="email"
+                    placeholder="Your Email"
+                    className="bg-transparent border-[1px] border-black input input-bordered w-full max-w-xs"
+                    {...register("email", {
+                      required: {
+                        value: true,
+                        message: "Email is Required",
+                      },
+                      pattern: {
+                        value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
+                        message: "Provide a valid Email",
+                      },
+                    })}
+                  />
+
+                  <label className="label">
+                    {errors.email?.type === "required" && (
+                      <span className="label-text-alt text-red-500">
+                        {errors.email.message}
+                      </span>
+                    )}
+                    {errors.email?.type === "pattern" && (
+                      <span className="label-text-alt text-red-500">
+                        {errors.email.message}
+                      </span>
+                    )}
+                  </label>
+                </div>
+                <div className="form-control w-full max-w-xs">
+                  <label className="label">
+                    <span className="label-text">Password</span>
+                  </label>
+                  <input
+                    type="password"
+                    placeholder="Password"
+                    className=" bg-transparent border-[1px] border-black input input-bordered w-full max-w-xs"
+                    {...register("password", {
+                      required: {
+                        value: true,
+                        message: "Password is Required",
+                      },
+                      minLength: {
+                        value: 6,
+                        message: "Password Must be 6 characters or longer",
+                      },
+                    })}
+                  />
+                  <label className="label">
+                    {errors.password?.type === "required" && (
+                      <span className="label-text-alt text-red-500">
+                        {errors.password.message}
+                      </span>
+                    )}
+                    {errors.password?.type === "minLength" && (
+                      <span className="label-text-alt text-red-500">
+                        {errors.password.message}
+                      </span>
+                    )}
+                  </label>
+                </div>
+
+                {signInError}
+                <input
+                  className="btn w-full max-w-xs text-black"
+                  type="submit"
+                  value="Register"
+                />
+              </form>
+              <p>
+                <small className="text-black font-bold text-sm">
+                  Already have an Account ?{" "}
+                  <Link className="text-green-700 font-bold" to="/loginpage">
+                    Log in
+                  </Link>
+                </small>
+              </p>
+              <div className="divider text-black">OR</div>
+              <button
+                onClick={() => signInWithGoogle()}
+                className="btn btn-outline hover:bg-green-500 hover:border-0"
+              >
+                Continue with Google
+              </button>
+            </div>
           </div>
-
-          {/* <input type="text" name="username" placeholder="Username" /> */}
-          <input
-            className="bg-transparent focus:outline-none focus:bg-transparent"
-            type="text"
-            name="email"
-            autocomplete="off"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="E-mail :"
-          />
-          <input
-            className="bg-transparent focus:outline-none focus:bg-transparent"
-            type="password"
-            name="password"
-            autocomplete="off"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="Password :"
-          />
-          {/* <input
-            className="bg-transparent focus:outline-none focus:bg-transparent"
-            type="password"
-            name="password2"
-            autocomplete="off"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="Confirm Password : "
-          /> */}
-
-          {/* <button type="submit" name="signup_submit" value="Signup" /> */}
-          <button
-            onClick={() => createUserWithEmailAndPassword(email, password)}
-            className="loginbutton"
-          >
-            Signup
-          </button>
-          <div className="flex items-center justify-center gap-3 pt-7">
-            <div className="h-[1px] w-[196px] "></div>
-            OR
-            <div className="h-[1px] w-[196px] "></div>
-          </div>
-
-          <div className="google_facebook_button flex justify-center items-center gap-[17px]">
-            <button
-              onClick={() => signInWithGoogle()}
-              className="social_button flex items-center justify-center gap-1"
-            >
-              {" "}
-              <img src={google} alt="" />
-              Continue with Google{" "}
-            </button>
-
-            {/* <button
-              onClick={() => signInWithFacebook()}
-              className="social_button flex items-center justify-center gap-1"
-            >
-              <img src={facebook} alt="" />
-              Continue with Facebook
-            </button> */}
-          </div>
-          <p className="text-[#F9F9F9] text-[16px] font-[400] mt-5 tracking-wider">
-            Already have an account?{" "}
-            <span className="text-[#F9F9F9] text-[16px] font-[600] tracking-wider">
-              {" "}
-              <Link to="/loginpage"> Login</Link>{" "}
-            </span>
-          </p>
         </div>
       </div>
     </div>
