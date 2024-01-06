@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import heroimage from "../../Assets/heroimage/th (5) 1.png";
 import { BsFillPersonFill } from "react-icons/bs";
 import icon3 from "../../Assets/bannericon/3.png";
-import bgimage from '../../Assets/heroimage/bookappointment-2.png'
-import './bookappointment.scss'
+import bgimage from "../../Assets/heroimage/bookappointment-2.png";
+import "./bookappointment.scss";
+import { Link } from "react-router-dom";
 const Bookappointment = () => {
-
   const [isOpen, setIsOpen] = useState(false);
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
+    name: "",
+    email: "",
+    message: "",
   });
 
   const toggleModal = () => {
@@ -32,7 +32,6 @@ const Bookappointment = () => {
     toggleModal();
   };
 
-
   return (
     <div>
       <div class="hidden lg:block book_an_appoinment  p-[40px]">
@@ -47,9 +46,7 @@ const Bookappointment = () => {
               consectetur error et quidem voluptatem dolor autem facere in
               itaque ipsum dolore!
             </p>
-            <div>
-
-            </div>
+            <div></div>
             <div class="flex items-center gap-3">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -66,246 +63,261 @@ const Bookappointment = () => {
               Find a Best Doctor’s
             </div>
             <div class="seemore_button   flex justify-start mt-9">
-          <button onClick={toggleModal}  class="bg-[#026E5F] rounded-sm p-[10px] w-[208px] text-white font-b ">
-            Book an Appointment
-          </button>
-        </div>
-        {isOpen && (
-         <div className="fixed inset-0 flex w-[100%] justify-center z-50 overflow-auto">
-         {/* <div className="absolute inset-0 bg-black opacity-50"></div> */}
-         <div className="relative z-10   rounded-md shadow-lg">
-           <button
-             onClick={toggleModal}
-             className="absolute top-3 right-3 z-50 p-1 bg-gray-300 rounded-md"
-           >
-             <svg
-               className="w-4 h-4 text-gray-700"
-               fill="currentColor"
-               viewBox="0 0 20 20"
-             >
-               <path
-                 fillRule="evenodd"
-                 d="M5.293 6.707a1 1 0 011.414 0L10 8.586l3.293-3.293a1 1 0 011.414 1.414L11.414 10l3.293 3.293a1 1 0 01-1.414 1.414L10 11.414l-3.293 3.293a1 1 0 01-1.414-1.414L8.586 10 5.293 6.707a1 1 0 010-1.414z"
-                 clipRule="evenodd"
-               />
-             </svg>
-           </button>
-           <div className="relative z-10 bg-[#242424] p-6 text-white   rounded-md shadow-lg">
-           
-           <h2 className="text-xl font-bold text-center pt-2">Request a Surgery</h2>
-           <div className=''>
-       <p className='font-[600] text-[1vw] text-white'>Patient Information</p>
-       <p className='font-[500] mt-1 text-[1vw] text-white'>Patient Status</p>
-       <div className='flex items-center gap-x-6'>
-           <p className='font-[500] text-[1vw] text-white '> I am a</p>
-           <div className='flex items-center gap-x-3'>
-           <input type="radio" name="" id="" />
-           <p className='font-[500]  text-[1vw] text-white'>New Patient</p>
-           </div>
-           <div className='flex items-center gap-x-3'>
-           <input type="radio" name="" id="" />
-           <p className='font-[500] text-[1vw] text-white'>New Patient</p>
-           </div>
-       </div>
+              <Link to="/doctors">
+                {" "}
+                <button class="bg-[#026E5F] rounded-sm p-[10px] w-[208px] text-white font-b ">
+                  Find the Best Doctor's
+                </button>
+              </Link>
+            </div>
+            {isOpen && (
+              <div className="fixed inset-0 flex w-[100%] justify-center z-50 overflow-auto">
+                {/* <div className="absolute inset-0 bg-black opacity-50"></div> */}
+                <div className="relative z-10   rounded-md shadow-lg">
+                  <button
+                    onClick={toggleModal}
+                    className="absolute top-3 right-3 z-50 p-1 bg-gray-300 rounded-md"
+                  >
+                    <svg
+                      className="w-4 h-4 text-gray-700"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M5.293 6.707a1 1 0 011.414 0L10 8.586l3.293-3.293a1 1 0 011.414 1.414L11.414 10l3.293 3.293a1 1 0 01-1.414 1.414L10 11.414l-3.293 3.293a1 1 0 01-1.414-1.414L8.586 10 5.293 6.707a1 1 0 010-1.414z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                  <div className="relative z-10 bg-[#242424] p-6 text-white   rounded-md shadow-lg">
+                    <h2 className="text-xl font-bold text-center pt-2">
+                      Request a Surgery
+                    </h2>
+                    <div className="">
+                      <p className="font-[600] text-[1vw] text-white">
+                        Patient Information
+                      </p>
+                      <p className="font-[500] mt-1 text-[1vw] text-white">
+                        Patient Status
+                      </p>
+                      <div className="flex items-center gap-x-6">
+                        <p className="font-[500] text-[1vw] text-white ">
+                          {" "}
+                          I am a
+                        </p>
+                        <div className="flex items-center gap-x-3">
+                          <input type="radio" name="" id="" />
+                          <p className="font-[500]  text-[1vw] text-white">
+                            New Patient
+                          </p>
+                        </div>
+                        <div className="flex items-center gap-x-3">
+                          <input type="radio" name="" id="" />
+                          <p className="font-[500] text-[1vw] text-white">
+                            New Patient
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <form className="mt-3" onSubmit={handleSubmit}>
+                      <div className="input_first_mother_container flex gap-x-3">
+                        <div className="input_container_one">
+                          <div className="single_container_one w-[19vw]">
+                            <div>
+                              <input
+                                placeholder="Name"
+                                type="text"
+                                id="name"
+                                name="name"
+                                value={formData.name}
+                                onChange={handleChange}
+                                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                              />
+                            </div>
 
-   </div>
-           <form className="mt-3"  onSubmit={handleSubmit}>
-           <div className="input_first_mother_container flex gap-x-3">
-           <div className="input_container_one">
-                       <div className="single_container_one w-[19vw]">
-               <div>
-               <input
-               placeholder="Name"
-                 type="text"
-                 id="name"
-                 name="name"
-                 value={formData.name}
-                 onChange={handleChange}
-                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-               />
-               </div>
-         
-         <div>
-              
-              <select class="block w-full px-4 py-2 mt-2  bg-white   rounded-md  text-gray-500 focus:outline-none ">
-                      <option>Gender</option>
-                      <option>Male</option>
-                      <option>Female</option>
-                     
-                  </select>
+                            <div>
+                              <select class="block w-full px-4 py-2 mt-2  bg-white   rounded-md  text-gray-500 focus:outline-none ">
+                                <option>Gender</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                              </select>
+                            </div>
+                            <div>
+                              <select class="block w-full px-4 py-2 mt-2  bg-white   rounded-md  text-gray-500 focus:outline-none ">
+                                <option>Marital Status</option>
+                                <option>Single</option>
+                                <option>Married</option>
+                              </select>
+                            </div>
+                            <div className="mt-2">
+                              <input
+                                placeholder="Write Your Problem"
+                                type="text"
+                                id="name"
+                                name="name"
+                                value={formData.name}
+                                onChange={handleChange}
+                                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div className="input_container_two">
+                          <div className="single_container_one w-[19vw]">
+                            <div>
+                              <select class="block w-full px-4 py-2  bg-white   rounded-md  text-gray-500 focus:outline-none ">
+                                <option>Age</option>
+                                <option>20</option>
+                                <option>30</option>
+                              </select>
+                            </div>
+                            <div className="mt-2">
+                              <input
+                                placeholder="Name"
+                                type="text"
+                                id="name"
+                                name="name"
+                                value={formData.name}
+                                onChange={handleChange}
+                                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                              />
+                            </div>
+                            <div className="mt-2">
+                              <input
+                                placeholder="Name"
+                                type="text"
+                                id="name"
+                                name="name"
+                                value={formData.name}
+                                onChange={handleChange}
+                                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                              />
+                            </div>
+                            <div className="mt-2">
+                              <input
+                                placeholder="Prescription"
+                                type="file"
+                                id="name"
+                                name="name"
+                                value={formData.name}
+                                onChange={handleChange}
+                                className="w-full px-4 py-2 border  border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div className="input_container_three">
+                          <div className="w-[19vw]">
+                            <input
+                              placeholder="Date of Birth"
+                              id="date"
+                              type="date"
+                              class="block w-full px-4 py-[6px]  text-gray-700 bg-white border  rounded-md focus:outline-none "
+                            />
+                          </div>
+
+                          <div className="mt-2">
+                            <input
+                              placeholder="Email"
+                              type="text"
+                              id="name"
+                              name="Email"
+                              value={formData.name}
+                              onChange={handleChange}
+                              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            />
+                          </div>
+                          <div className="mt-2">
+                            <input
+                              placeholder="Permanent Address"
+                              type="text"
+                              id="name"
+                              name="name"
+                              value={formData.name}
+                              onChange={handleChange}
+                              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="mb-0 ">
+                        <label
+                          htmlFor="message"
+                          className="block mb-2 font-medium"
+                        >
+                          Message
+                        </label>
+                        <textarea
+                          id="message"
+                          name="message"
+                          value={formData.message}
+                          onChange={handleChange}
+                          className="w-full h-[58px] px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          rows="4"
+                        ></textarea>
+                      </div>
+
+                      <div className="surgery_information">
+                        <p className="font-[600]  text-[1vw] text-white">
+                          Surgery Information
+                        </p>
+                        <div className="surgery_input flex gap-x-8 ">
+                          <div className="w-[360px]">
+                            <select class="block w-full px-4 py-2 mt-0  bg-white   rounded-md  text-gray-500 focus:outline-none ">
+                              <option>DEPARTMENT</option>
+                              <option>Surgery</option>
+                              <option>Medicine</option>
+                            </select>
+                          </div>
+                          <div className="w-[19vw]">
+                            <input
+                              placeholder="Date of Birth"
+                              id="date"
+                              type="date"
+                              class="block w-full px-4 py-2  text-gray-700 bg-white border  rounded-md focus:outline-none "
+                            />
+                          </div>
+                          <div className="w-[19vw]">
+                            <input
+                              placeholder="Date of Birth"
+                              id="date"
+                              type="time"
+                              class="block w-full px-4 py-2  text-gray-700 bg-white border  rounded-md focus:outline-none "
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div className="">
+                        <p className="font-[600] mt-1 text-[1vw] text-white">
+                          Doctor referral letter
+                        </p>
+                        <div className=" w-[364px]">
+                          <input
+                            placeholder="Permanent Address"
+                            type="text"
+                            id="name"
+                            name="name"
+                            value={formData.name}
+                            onChange={handleChange}
+                            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          />
+                        </div>
+                      </div>
+                      <div className="flex justify-center mt-5">
+                        <button
+                          type="submit"
+                          className="  bg-[#00DC82] text-black w-[15.9vw] h-[2.65vw]  rounded-[33.5px]"
+                        >
+                          Confirm
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
               </div>
-              <div>
-              
-              <select class="block w-full px-4 py-2 mt-2  bg-white   rounded-md  text-gray-500 focus:outline-none ">
-                      <option>Marital Status</option>
-                      <option>Single</option>
-                      <option>Married</option>
-                     
-                  </select>
-              </div>
-              <div className="mt-2">
-               <input
-               placeholder="Write Your Problem"
-                 type="text"
-                 id="name"
-                 name="name"
-                 value={formData.name}
-                 onChange={handleChange}
-                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-               />
-               </div>
-                       </div>
-             </div>
-           <div className="input_container_two">
-          
-                       <div className="single_container_one w-[19vw]">
-                       <div>
-              
-              <select class="block w-full px-4 py-2  bg-white   rounded-md  text-gray-500 focus:outline-none ">
-                      <option>Age</option>
-                      <option>20</option>
-                      <option>30</option>
-                     
-                  </select>
-              </div>
-               <div className="mt-2">
-               <input
-               placeholder="Name"
-                 type="text"
-                 id="name"
-                 name="name"
-                 value={formData.name}
-                 onChange={handleChange}
-                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-               />
-               </div>
-               <div className="mt-2">
-               <input
-               placeholder="Name"
-                 type="text"
-                 id="name"
-                 name="name"
-                 value={formData.name}
-                 onChange={handleChange}
-                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-               />
-               </div>
-              <div className="mt-2">
-             
-               <input
-               placeholder="Prescription"
-                 type="file"
-                 id="name"
-                 name="name"
-                 value={formData.name}
-                 onChange={handleChange}
-                 className="w-full px-4 py-2 border  border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-               />
-               </div>
-                       </div> 
-           </div>
-           <div className="input_container_three">
-          
-           <div className="w-[19vw]">
-                <input placeholder='Date of Birth' id="date" type="date" class="block w-full px-4 py-[6px]  text-gray-700 bg-white border  rounded-md focus:outline-none "/>
-          
-           </div>
-
-
-           <div className="mt-2">
-               <input
-               placeholder="Email"
-                 type="text"
-                 id="name"
-                 name="Email"
-                 value={formData.name}
-                 onChange={handleChange}
-                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-               />
-               </div>
-               <div className="mt-2">
-               <input
-               placeholder="Permanent Address"
-                 type="text"
-                 id="name"
-                 name="name"
-                 value={formData.name}
-                 onChange={handleChange}
-                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-               />
-               </div>
-
-
-
-           </div>
-           </div>
-          
-             <div className="mb-0 ">
-               <label htmlFor="message" className="block mb-2 font-medium">
-                 Message
-               </label>
-               <textarea
-                 id="message"
-                 name="message"
-                 value={formData.message}
-                 onChange={handleChange}
-                 className="w-full h-[58px] px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                 rows="4"
-               ></textarea>
-             </div>
-
-           <div className="surgery_information">
-           <p className='font-[600]  text-[1vw] text-white'>Surgery  Information</p>
-<div className="surgery_input flex gap-x-8 ">
-<div className="w-[360px]">
-              
-              <select class="block w-full px-4 py-2 mt-0  bg-white   rounded-md  text-gray-500 focus:outline-none ">
-                      <option>DEPARTMENT</option>
-                      <option>Surgery</option>
-                      <option>Medicine</option>
-                     
-                  </select>
-              </div>
-              <div className="w-[19vw]">
-                <input placeholder='Date of Birth' id="date" type="date" class="block w-full px-4 py-2  text-gray-700 bg-white border  rounded-md focus:outline-none "/>
-          
-           </div>
-           <div className="w-[19vw]">
-                <input placeholder='Date of Birth' id="date" type="time" class="block w-full px-4 py-2  text-gray-700 bg-white border  rounded-md focus:outline-none "/>
-          
-           </div>
-
-</div>
-           </div>
-           <div className="">
-
-           <p className='font-[600] mt-1 text-[1vw] text-white'>Doctor referral letter</p>
-           <div className=" w-[364px]">
-               <input
-               placeholder="Permanent Address"
-                 type="text"
-                 id="name"
-                 name="name"
-                 value={formData.name}
-                 onChange={handleChange}
-                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-               />
-               </div>
-
-           </div>
-             <div className="flex justify-center mt-5">
-               <button
-                 type="submit"
-           className="  bg-[#00DC82] text-black w-[15.9vw] h-[2.65vw]  rounded-[33.5px]"
-               >
-                 Confirm 
-               </button>
-             </div>
-           </form>
-         </div>
-         </div>
-       </div>
-      )}
+            )}
           </div>
           <div class="image_appointment">
             <img src={heroimage} alt="" />
@@ -313,16 +325,12 @@ const Bookappointment = () => {
         </div>
       </div>
 
+      {/* ---------------------------Mobile view start---------------- */}
 
-{/* ---------------------------Mobile view start---------------- */}
-
-
-<div className="block lg:hidden book_appointment_mobile_view w-[315px] mx-auto py-[40px]">
-
-
-<div className="book_appointment_bg_image ">
- <div className="details flex flex-col items-center justify-center px-3 py-9 ">
- <h1 class="text-[20px] font-bold text-black">
+      <div className="block lg:hidden book_appointment_mobile_view w-[315px] mx-auto py-[40px]">
+        <div className="book_appointment_bg_image ">
+          <div className="details flex flex-col items-center justify-center px-3 py-9 ">
+            <h1 class="text-[20px] font-bold text-black">
               Book an Appointment
             </h1>
             <div class="flex items-center gap-3">
@@ -340,16 +348,17 @@ const Bookappointment = () => {
               <BsFillPersonFill></BsFillPersonFill>
               Find a Best Doctor’s
             </div>
- </div>
-            <div class="seemore_button   w-full mt-9">
-          <button onClick={toggleModal}  class="bg-[#df30307c] rounded-sm p-[10px] w-full text-white font-b ">
-            Book an Appointment
-          </button>
+          </div>
+          <div class="seemore_button   w-full mt-9">
+            <button
+              onClick={toggleModal}
+              class="bg-[#df30307c] rounded-sm p-[10px] w-full text-white font-b "
+            >
+              Book an Appointment
+            </button>
+          </div>
         </div>
-</div>
-
-</div>
-
+      </div>
     </div>
   );
 };

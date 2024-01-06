@@ -99,7 +99,10 @@ const Doctors = () => {
                   </div>
 
                   <div className="text-start text-[16px]">
-                    <p className="pt-[8px]"> Speciality - {doctor.specialty}</p>
+                    <p className="pt-[8px]">
+                      {" "}
+                      Speciality - {doctor.speciality}
+                    </p>
                   </div>
 
                   <div className="text-start text-[16px]">

@@ -38,6 +38,7 @@ import MyProfile from "./Components/Dashboard/MyProfile";
 import Allusers from "./Components/Dashboard/Allusers";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import MyAppointment from "./Components/Myappointment/MyAppointment";
 function App() {
   return (
     <div className="bg-[#F5F5F5] app relative">
@@ -51,6 +52,14 @@ function App() {
           element={
             <RequireAuth>
               <Doctors />
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path="/appointment"
+          element={
+            <RequireAuth>
+              <MyAppointment />
             </RequireAuth>
           }
         ></Route>

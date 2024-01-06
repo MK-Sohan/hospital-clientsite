@@ -26,11 +26,7 @@ const Navbar = () => {
       res.json()
     )
   );
-  useEffect(() => {
-    if (product) {
-      refetch();
-    }
-  }, []);
+
   if (isLoading) {
     return <Loading></Loading>;
   }
@@ -67,11 +63,11 @@ const Navbar = () => {
                   MEDICINE
                 </Link>
               </li>
-              {/* <li class="block p-1 font-sans text-md font-normal leading-normal text-white antialiased">
-                <a class="flex items-center" href="#">
-                  DEPARTMENT
-                </a>
-              </li> */}
+              <li class="block p-1 font-sans text-md font-normal leading-normal text-white antialiased">
+                <Link to="/appointment" class="flex items-center" href="#">
+                  MY APPOINTMENT
+                </Link>
+              </li>
               <li class="block p-1 font-sans text-md font-normal leading-normal text-white antialiased">
                 <Link to="/dashboard" class="flex items-center" href="#">
                   DASHBOARD
