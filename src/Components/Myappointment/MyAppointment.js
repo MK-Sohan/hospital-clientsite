@@ -29,7 +29,7 @@ const MyAppointment = () => {
   }, [email]);
 
   return (
-    <div className="w-[50%] mx-auto mb-6">
+    <div className="w-[50%] mx-auto mb-6 h-[100vh]">
       <div className="flex flex-col">
         {myAppointment?.map((doctor) => (
           <div className="doctors_card_maindiv  mt-[26px] flex justify-center flex-col items-center">
