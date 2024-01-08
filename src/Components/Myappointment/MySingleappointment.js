@@ -43,30 +43,30 @@ const MySingleappointment = ({ doctor, refetch, setPageLoading }) => {
             <div className="text-start text-[16px]">
               <p className="pt-[8px]">
                 {" "}
-                Doctor's Name - {doctor.docdetail.name}
+                Doctor's Name - {doctor?.docdetail?.name}
               </p>
             </div>
             <div className="text-start text-[16px]">
               <p className="pt-[8px]">
                 {" "}
-                Doctor's Speciality - {doctor.docdetail.speciality}
+                Doctor's Speciality - {doctor?.docdetail?.speciality}
               </p>
             </div>
 
             <div className="text-start text-[16px]">
               <p className="pt-[8px]">
-                Doctor's Email - {doctor.docdetail.email}
+                Doctor's Email - {doctor?.docdetail?.email}
               </p>
             </div>
             <div className="text-start text-[16px]">
               <p className="pt-[8px]">
-                Doctor's Phone no. - {doctor.docdetail.phone}
+                Doctor's Phone no. - {doctor?.docdetail?.phone}
               </p>
             </div>
             <div className="text-start text-[16px]">
               <p className="pt-[8px]">
                 {" "}
-                Doctor's About - {doctor.docdetail.about?.slice(0, 70)}...
+                Doctor's About - {doctor?.docdetail?.about?.slice(0, 70)}...
               </p>
             </div>
             <div className="name_and_review  flex flex-col items-center lg:flex-row justify-between py-5">
@@ -75,16 +75,16 @@ const MySingleappointment = ({ doctor, refetch, setPageLoading }) => {
               </p>
             </div>
             <div className="text-start text-[16px]">
-              <p className="pt-[8px]"> Patient Name - {doctor.name}</p>
+              <p className="pt-[8px]"> Patient Name - {doctor?.name}</p>
             </div>
             <div className="text-start text-[16px]">
-              <p className="pt-[8px]"> Patient Phone - {doctor.phone}</p>
+              <p className="pt-[8px]"> Patient Phone - {doctor?.phone}</p>
             </div>
             <div className="text-start text-[16px]">
-              <p className="pt-[8px]"> Patient Email - {doctor.email}</p>
+              <p className="pt-[8px]"> Patient Email - {doctor?.email}</p>
             </div>
             <div className="text-start text-[16px]">
-              <p className="pt-[8px]"> Patient Address - {doctor.address}</p>
+              <p className="pt-[8px]"> Patient Address - {doctor?.address}</p>
             </div>
           </div>
         </div>

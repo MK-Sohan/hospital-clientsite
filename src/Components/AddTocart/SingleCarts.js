@@ -83,7 +83,7 @@ const SingleCarts = ({ value, setOrderdelete, refetch }) => {
               Company : {value.company}
             </h2>
             <h2 class="text-lg font-bold text-gray-900">
-              Price : {value.price} ৳
+              Price : {Number(value.price) * value.quantity} ৳
             </h2>
           </div>
           <div class="mt-4 flex justify-between sm:space-y-6 sm:mt-0 sm:block sm:space-x-6">

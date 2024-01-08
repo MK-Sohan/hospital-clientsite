@@ -13,41 +13,35 @@ import { useQuery } from "react-query";
 const auth = getAuth(app);
 const MyAppointment = () => {
   // const [allDoctors, setAllDoctors] = useState([]);
-  const [myAppointment, setMyappointment] = useState([]);
+  // const [myAppointment, setMyappointment] = useState([]);
   const [pageloading, setPageLoading] = useState(false);
+  // const [taj, setTaj] = useState(false);
   const navigate = useNavigate();
   const [user, loading, error] = useAuthState(auth);
   const email = user?.email;
-  // const [refetch] = useCartitem();
-  // useEffect(() => {
-  //   fetch("http://localhost:5000/alldoctors")
-  //     .then((res) => res.json())
-  //     .then((data) => setAllDoctors(data));
-  // }, []);
-  // console.log(myAppointment);
+
   const {
-    data: alldoctors,
+    data: myAppointment,
     refetch,
     isLoading,
-  } = useQuery("pcart", () =>
-    fetch("http://localhost:5000/alldoctors", {
-      method: "GET",
-      // headers: {
-      //   authorization: `Bearer ${localStorage.getItem("accesstoken")}`,
-      // },
-    }).then((res) => res.json())
-  );
-  console.log(alldoctors);
-  useEffect(() => {
-    if (email) {
-      fetch(`http://localhost:5000/myappointment/${email}`)
-        .then((res) => res.json())
-        .then((data) => {
-          // console.log(data);
-          setMyappointment(data);
-        });
-    }
-  }, [email]);
+  } = useQuery({
+    queryKey: ["pcart"],
+    queryFn: () =>
+      fetch(`http://localhost:5000/myappointment/${email}`).then((res) =>
+        res.json()
+      ),
+  });
+  // console.log(alldoctors);
+  // useEffect(() => {
+  //   if (email) {
+  //     fetch(`http://localhost:5000/myappointment/${email}`)
+  //       .then((res) => res.json())
+  //       .then((data) => {
+  //         // console.log(data);
+  //         setMyappointment(data);
+  //       });
+  //   }
+  // }, [email]);
 
   return (
     <div className="w-[50%] mx-auto mb-6 h-[100%]">

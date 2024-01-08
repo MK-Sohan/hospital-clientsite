@@ -5,10 +5,13 @@ import app from "../../firebase.init";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { getAuth } from "firebase/auth";
 import { toast } from "react-toastify";
+import useMycartItem from "../Hooks/useMycartItem";
 const auth = getAuth(app);
 const Drugdetails = () => {
   const [quantity, setQuantity] = useState(1);
   const [user, loading, error] = useAuthState(auth);
+  const [product, refetch, isLoading] = useMycartItem();
+
   const handleIncrement = () => {
     setQuantity(quantity + 1);
   };
@@ -53,6 +56,7 @@ const Drugdetails = () => {
     })
       .then((response) => response.json())
       .then((json) => {
+        refetch();
         toast.success("Item aded to the cart");
       });
   };

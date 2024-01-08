@@ -10,6 +10,7 @@ import { useAuthState, useSignOut } from "react-firebase-hooks/auth";
 import { getAuth } from "firebase/auth";
 import useCartitem from "../../AddTocart/useCartitem";
 import useAdmin from "../../Hooks/useAdmin";
+import useMycartItem from "../../Hooks/useMycartItem";
 const auth = getAuth(app);
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
@@ -17,17 +18,18 @@ const Navbar = () => {
   const [signOut] = useSignOut(auth);
   const cartuser = user?.email;
   // const [product, refetch] = useCartitem();
-  const [admin] = useAdmin(user);
+  const [admin, setAdmin] = useAdmin(user);
   console.log(admin);
-  const {
-    data: product,
-    refetch,
-    isLoading,
-  } = useQuery("pcart", () =>
-    fetch(`http://localhost:5000/cartallproducts/${cartuser}`).then((res) =>
-      res.json()
-    )
-  );
+  const [product, refetch, isLoading] = useMycartItem();
+  // const {
+  //   data: product,
+  //   refetch,
+  //   isLoading,
+  // } = useQuery("pcart", () =>
+  //   fetch(`http://localhost:5000/cartallproducts/${cartuser}`).then((res) =>
+  //     res.json()
+  //   )
+  // );
 
   if (isLoading) {
     return <Loading></Loading>;
@@ -90,6 +92,7 @@ const Navbar = () => {
                   onClick={async () => {
                     const success = await signOut();
                     localStorage.removeItem("accesstoken");
+                    setAdmin(false);
                     if (success) {
                       alert("You are sign out");
                     }

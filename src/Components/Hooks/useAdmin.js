@@ -12,7 +12,7 @@ const useAdmin = (user) => {
       fetch(`http://localhost:5000/admin/${email}`)
         .then((res) => res.json())
         .then((data) => {
-          setAdmin(data?.role);
+          setAdmin(data);
           setIsloading(true);
         });
     }
