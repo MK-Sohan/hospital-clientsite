@@ -36,7 +36,7 @@ const SignupPage = () => {
     if (user || guser) {
       navigate(from, { replace: true });
     }
-  }, [user, guser, from, navigate]);
+  }, [token, from, navigate]);
   const {
     register,
     formState: { errors },

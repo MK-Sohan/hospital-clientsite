@@ -15,7 +15,9 @@ const Allusers = () => {
   } = useQuery("user", () =>
     fetch("http://localhost:5000/alluser", {
       method: "GET",
-      headers: {},
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accesstoken")}`,
+      },
     }).then((res) => res.json())
   );
   if (isLoading) {
@@ -49,7 +51,7 @@ const Allusers = () => {
               {/* <!-- row 1 --> */}
               {users
                 ?.filter((val) => val.email.toLowerCase().includes(search))
-                .map((user) => (
+                ?.map((user) => (
                   <SingleUsers
                     key={user._id}
                     setDeleteuser={setDeleteuser}

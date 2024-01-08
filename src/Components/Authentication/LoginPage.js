@@ -38,10 +38,10 @@ const LoginPage = () => {
   let from = location.state?.from?.pathname || "/";
   const [token] = useToken(euser || guser);
   useEffect(() => {
-    if (euser || guser) {
+    if (token) {
       navigate(from, { replace: true });
     }
-  }, [euser, guser, from, navigate]);
+  }, [token, from, navigate]);
 
   let signInError;
   if (error || gerror) {

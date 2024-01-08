@@ -5,10 +5,11 @@ import { toast } from "react-toastify";
 const SingleUsers = ({ user, index, refetch, setDeleteuser }) => {
   const { email, role } = user;
   const makeAdmin = () => {
-    fetch(`http://localhost:5000/alluser/${email}`, {
+    fetch(`http://localhost:5000/user/admin/${email}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("accesstoken")}`,
       },
     })
       .then((res) => {
@@ -30,12 +31,16 @@ const SingleUsers = ({ user, index, refetch, setDeleteuser }) => {
       <th>{index}</th>
       <td>{user.email}</td>
       <td>
-        <button
-          onClick={makeAdmin}
-          className="btn btn-success font-bold text-white btn-xs"
-        >
-          Make Admin
-        </button>
+        {role !== "admin" ? (
+          <button
+            onClick={makeAdmin}
+            className="btn btn-success font-bold text-white btn-xs"
+          >
+            Make Admin
+          </button>
+        ) : (
+          <p className="text-green-600 font-bold">Already an Admin</p>
+        )}
       </td>
       <td>
         <label

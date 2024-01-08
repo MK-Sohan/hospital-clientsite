@@ -9,6 +9,7 @@ import app from "../../../firebase.init";
 import { useAuthState, useSignOut } from "react-firebase-hooks/auth";
 import { getAuth } from "firebase/auth";
 import useCartitem from "../../AddTocart/useCartitem";
+import useAdmin from "../../Hooks/useAdmin";
 const auth = getAuth(app);
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
@@ -16,7 +17,8 @@ const Navbar = () => {
   const [signOut] = useSignOut(auth);
   const cartuser = user?.email;
   // const [product, refetch] = useCartitem();
-
+  const [admin] = useAdmin(user);
+  console.log(admin);
   const {
     data: product,
     refetch,
@@ -68,11 +70,13 @@ const Navbar = () => {
                   MY APPOINTMENT
                 </Link>
               </li>
-              <li class="block p-1 font-sans text-md font-normal leading-normal text-white antialiased">
-                <Link to="/dashboard" class="flex items-center" href="#">
-                  DASHBOARD
-                </Link>
-              </li>
+              {admin && (
+                <li class="block p-1 font-sans text-md font-normal leading-normal text-white antialiased">
+                  <Link to="/dashboard" class="flex items-center" href="#">
+                    DASHBOARD
+                  </Link>
+                </li>
+              )}
 
               {/* <li class="block p-1 font-sans text-md font-normal leading-normal text-white antialiased  ">
                 <Link class="flex items-center" to="/allroomprices">
@@ -85,6 +89,7 @@ const Navbar = () => {
                 <button
                   onClick={async () => {
                     const success = await signOut();
+                    localStorage.removeItem("accesstoken");
                     if (success) {
                       alert("You are sign out");
                     }

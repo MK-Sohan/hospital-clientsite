@@ -20,6 +20,9 @@ const Doctordetails = () => {
     }
   }, [doctorId]);
   console.log(docdetail);
+  const handleDoctorappointmentform = (id) => {
+    navigate("/appointmentform/" + id);
+  };
   return (
     <div className="">
       <div className=" desktop_view hidden lg:block">
@@ -66,12 +69,13 @@ const Doctordetails = () => {
                 />
               </div>
               <div className="">
-                <Link to="/appointmentDoctor">
-                  {" "}
-                  <button className="bg-[#91C1BB] w-[197px] h-[43px] rounded-3xl mt-[19px]">
-                    Get Appointment
-                  </button>
-                </Link>
+                {" "}
+                <button
+                  onClick={() => handleDoctorappointmentform(docdetail._id)}
+                  className="bg-[#91C1BB] w-[197px] h-[43px] rounded-3xl mt-[19px]"
+                >
+                  Get Appointment
+                </button>
               </div>
             </div>
             <div className="doctor_detail_banner_image">

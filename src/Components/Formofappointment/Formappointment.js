@@ -275,9 +275,9 @@ const Formappointment = () => {
                   <button
                     role="button"
                     aria-label="create my account"
-                    className="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-indigo-700 border rounded hover:bg-green-600 py-4 w-full font-bold text-xl"
+                    className="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-green-600 border rounded hover:bg-green-400 hover:text-gray-700 py-4 w-full font-bold text-xl"
                   >
-                    Add product
+                    GET APPOINTMENT
                   </button>
                 </div>
               </form>
