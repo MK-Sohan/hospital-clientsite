@@ -14,6 +14,7 @@ const auth = getAuth(app);
 const MyAppointment = () => {
   // const [allDoctors, setAllDoctors] = useState([]);
   const [myAppointment, setMyappointment] = useState([]);
+  const [pageloading, setPageLoading] = useState(false);
   const navigate = useNavigate();
   const [user, loading, error] = useAuthState(auth);
   const email = user?.email;
@@ -55,6 +56,7 @@ const MyAppointment = () => {
           <MySingleappointment
             doctor={doctor}
             refetch={refetch}
+            setPageLoading={setPageLoading}
           ></MySingleappointment>
         ))}
       </div>

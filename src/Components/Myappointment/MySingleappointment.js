@@ -2,7 +2,7 @@ import React from "react";
 import { FaTrash } from "react-icons/fa";
 import { toast } from "react-toastify";
 
-const MySingleappointment = ({ doctor, refetch }) => {
+const MySingleappointment = ({ doctor, refetch, setPageLoading }) => {
   const handleDeleteAppointment = (id) => {
     console.log(id);
 
