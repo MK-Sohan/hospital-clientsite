@@ -4,11 +4,11 @@ const useAdmin = (user) => {
   const [admin, setAdmin] = useState();
   const [isLoading, setIsloading] = useState(false);
   //   console.log(user?.email, admin);
-  console.log(admin);
+  // console.log(admin);
   useEffect(() => {
     const email = user?.email;
     if (email) {
-      console.log(email);
+      // console.log(email);
       fetch(`http://localhost:5000/admin/${email}`)
         .then((res) => res.json())
         .then((data) => {

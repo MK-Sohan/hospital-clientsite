@@ -25,6 +25,19 @@ const SingleUsers = ({ user, index, refetch, setDeleteuser }) => {
         }
       });
   };
+  // console.log(user);
+  const handleDeleteuser = (id) => {
+    console.log(id);
+    fetch(`http://localhost:5000/deleteuser/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        refetch();
+        toast.error("User Removed");
+        console.log(data);
+      });
+  };
 
   return (
     <tr className="bg-slate-300 text-black text-2xl rounded-2xl">
@@ -43,13 +56,13 @@ const SingleUsers = ({ user, index, refetch, setDeleteuser }) => {
         )}
       </td>
       <td>
-        <label
-          onClick={() => setDeleteuser(user)}
+        <button
+          onClick={() => handleDeleteuser(user?._id)}
           for="user-delete-modal"
           className="btn btn-error btn-xs"
         >
           Remove User
-        </label>
+        </button>
       </td>{" "}
     </tr>
   );

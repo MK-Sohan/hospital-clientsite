@@ -26,7 +26,7 @@ const AmbulanceDetails = () => {
       .then((res) => res.json())
       .then((data) => setNoneacAmbulance(data));
   }, []);
-  console.log(ambulance);
+  // console.log(ambulance);
   function makePhoneCall(phoneNumber) {
     window.location.href = `tel:${phoneNumber}`;
   }

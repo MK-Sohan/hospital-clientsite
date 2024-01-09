@@ -55,7 +55,7 @@ const SignupPage = () => {
   //   toast("Successfully Registered");
   // }
 
-  console.log(email, password, user);
+  // console.log(email, password, user);
   let signInError;
   if (error || gerror) {
     signInError = (

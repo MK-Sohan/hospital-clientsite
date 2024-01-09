@@ -19,7 +19,7 @@ const Navbar = () => {
   const cartuser = user?.email;
   // const [product, refetch] = useCartitem();
   const [admin, setAdmin] = useAdmin(user);
-  console.log(admin);
+  // console.log(admin);
   const [product, refetch, isLoading] = useMycartItem();
   // const {
   //   data: product,

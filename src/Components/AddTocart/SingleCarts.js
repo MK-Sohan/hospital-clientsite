@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { toast } from "react-toastify";
 
 const SingleCarts = ({ value, setOrderdelete, refetch }) => {
-  console.log(value);
+  // console.log(value);
   const HandleDelete = (id) => {
-    console.log(id);
+    // console.log(id);
     fetch(`http://localhost:5000/cart/${id}`, {
       method: "DELETE",
     })

@@ -44,7 +44,7 @@ const MyAppointment = () => {
   // }, [email]);
 
   return (
-    <div className="w-[50%] mx-auto mb-6 h-[100%]">
+    <div className="w-[50%] mx-auto mb-[100px] h-[100vh] ">
       <div className="">
         {myAppointment?.map((doctor) => (
           <MySingleappointment

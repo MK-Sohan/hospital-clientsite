@@ -13,7 +13,7 @@ const auth = getAuth(app);
 const AddToCart = () => {
   const [orderdelete, setOrderdelete] = useState(null);
   const [user, loading, error] = useAuthState(auth);
-  console.log(user.email);
+  // console.log(user.email);
   const cartuser = user?.email;
   const {
     data: product,
@@ -28,12 +28,12 @@ const AddToCart = () => {
     return <Loading></Loading>;
   }
   // const subtotal
-  console.log(product);
+  // console.log(product);
   const subTotal = product.reduce((total, item) => {
     const subtotal = parseInt(item.price) * item.quantity;
     return total + subtotal;
   }, 0);
-  console.log(subTotal);
+  // console.log(subTotal);
   return (
     <div>
       <div class=" bg-gray-100 pt-20 pb-10">

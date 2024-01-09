@@ -22,7 +22,7 @@ const Drugdetails = () => {
     }
   };
   const { medicineId } = useParams();
-  console.log(medicineId);
+  // console.log(medicineId);
   const [medidetail, setMedidetail] = useState({});
   useEffect(() => {
     if (medicineId) {

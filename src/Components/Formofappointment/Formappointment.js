@@ -14,7 +14,7 @@ const Formappointment = () => {
     setPatientType(selectedType);
   };
   const [user, loading, error] = useAuthState(auth);
-  console.log(user);
+  // console.log(user);
   const [docdetail, setDocdetail] = useState({});
   useEffect(() => {
     if (doctorId) {

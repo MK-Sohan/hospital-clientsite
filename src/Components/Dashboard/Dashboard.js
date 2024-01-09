@@ -53,6 +53,30 @@ const Dashboard = () => {
                 All Users
               </Link>
             </li>
+            <li
+              className={`border-[1px] ${
+                activeButton === "allAppointments" ? "bg-black" : "bg-green-600"
+              } text-white mb-4`}
+            >
+              <Link
+                to="/dashboard/manageappointments"
+                onClick={() => handleButtonClick("allAppointments")}
+              >
+                All Appointments
+              </Link>
+            </li>
+            <li
+              className={`border-[1px] ${
+                activeButton === "allMedicines" ? "bg-black" : "bg-green-600"
+              } text-white mb-4`}
+            >
+              <Link
+                to="/dashboard/managemedicine"
+                onClick={() => handleButtonClick("allMedicines")}
+              >
+                Manage Medicines
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
