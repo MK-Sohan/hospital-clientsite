@@ -91,6 +91,18 @@ const Dashboard = () => {
                 Manage Medicines
               </Link>
             </li>
+            <li
+              className={`border-[1px] ${
+                activeButton === "addMedicines" ? "bg-black" : "bg-green-600"
+              } text-white mb-4`}
+            >
+              <Link
+                to="/dashboard/addmedicine"
+                onClick={() => handleButtonClick("addMedicines")}
+              >
+                Add Medicines
+              </Link>
+            </li>
           </ul>
         </div>
       </div>

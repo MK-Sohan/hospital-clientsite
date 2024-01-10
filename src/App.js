@@ -42,6 +42,8 @@ import MyAppointment from "./Components/Myappointment/MyAppointment";
 import Appointments from "./Components/Dashboard/Appointments";
 import ManageMedicines from "./Components/Dashboard/ManageMedicines";
 import AllcustomerOrders from "./Components/Dashboard/AllcustomerOrders";
+// import EditMedicine from "./Components/Dashboard/Addmedicine";
+import Addmedicine from "./Components/Dashboard/Addmedicine";
 function App() {
   return (
     <div className="bg-[#F5F5F5] app relative">
@@ -78,6 +80,8 @@ function App() {
           <Route path="allusers" element={<Allusers />}></Route>
           <Route path="manageappointments" element={<Appointments />}></Route>
           <Route path="managemedicine" element={<ManageMedicines />}></Route>
+          <Route path="addmedicine" element={<Addmedicine />}></Route>
+
           <Route
             path="allcustomerorders"
             element={<AllcustomerOrders />}

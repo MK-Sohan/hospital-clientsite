@@ -1,8 +1,26 @@
 import React from "react";
 import { FaCheck } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 const SingleOrder = ({ order, refetch, i, currentPage, postsPerPage }) => {
-  console.log(order.product);
+  //   console.log(order.product);
+  //   const confirmed = window.confirm("Are you sure to delete ?");
+  const handleDelete = (id) => {
+    console.log(id);
+    fetch(`http://localhost:5000/customerOrderdelete/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("accesstoken")}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        refetch();
+        toast.warning("Item Deleted");
+      });
+  };
+
   return (
     <tbody className="text-lg">
       {/* row 1 */}
@@ -37,7 +55,12 @@ const SingleOrder = ({ order, refetch, i, currentPage, postsPerPage }) => {
           ))}
         </td>
         <td>
-          <button className="btn btn-sm bg-red-500 text-white">Delete</button>
+          <button
+            onClick={() => handleDelete(order._id)}
+            className="btn btn-sm bg-red-500 text-white"
+          >
+            Delete
+          </button>
         </td>
       </tr>
     </tbody>

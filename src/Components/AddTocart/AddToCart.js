@@ -49,10 +49,10 @@ const AddToCart = () => {
     fetch("http://localhost:5000/allcustomerorders", {
       method: "POST",
       body: JSON.stringify(productinfo),
-      // headers: {
-      //   "Content-type": "application/json",
-      //   authorization: `Bearer ${localStorage.getItem("accesstoken")}`,
-      // },
+      headers: {
+        "Content-type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("accesstoken")}`,
+      },
     })
       .then((response) => response.json())
       .then((json) => {

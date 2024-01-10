@@ -18,7 +18,7 @@ const AllcustomerOrders = () => {
       },
     }).then((res) => res.json())
   );
-  console.log(allorders);
+  //   console.log(allorders);
   return (
     <div className="w-[100%]">
       <div className="overflow-x-auto w-[100%]">
