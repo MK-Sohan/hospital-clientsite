@@ -29,15 +29,13 @@ const Appointments = () => {
             onChange={(e) => setSesrch(e.target.value)}
             className="border-[1px] h-12 w-80 px-3 focus:outline-none"
             type="search"
-            name=""
-            id=""
             placeholder="Search by Email"
           />
         </div>
       </div>
       <div className="flex justify-center items-center   flex-col">
         {appointments
-          ?.filter((val) => val?.docdetail.name.toLowerCase().includes(search))
+          ?.filter((val) => val?.docdetail?.name.toLowerCase().includes(search))
           ?.map((value) => {
             return (
               <SingleAllappointments

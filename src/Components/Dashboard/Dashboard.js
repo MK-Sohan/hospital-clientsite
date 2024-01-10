@@ -67,6 +67,20 @@ const Dashboard = () => {
             </li>
             <li
               className={`border-[1px] ${
+                activeButton === "allcustomerorders"
+                  ? "bg-black"
+                  : "bg-green-600"
+              } text-white mb-4`}
+            >
+              <Link
+                to="/dashboard/allcustomerorders"
+                onClick={() => handleButtonClick("allcustomerorders")}
+              >
+                All Orders
+              </Link>
+            </li>
+            <li
+              className={`border-[1px] ${
                 activeButton === "allMedicines" ? "bg-black" : "bg-green-600"
               } text-white mb-4`}
             >
