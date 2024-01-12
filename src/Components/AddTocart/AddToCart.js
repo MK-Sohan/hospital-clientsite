@@ -59,7 +59,7 @@ const AddToCart = () => {
         toast("Checkout Successfully");
         // console.log(json);
       });
-    // reset();
+    reset();
   };
   const subTotal = product.reduce((total, item) => {
     const subtotal = parseInt(item.price) * item.quantity;

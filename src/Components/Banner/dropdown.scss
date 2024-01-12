@@ -1,7 +1,7 @@
 .dropdown_container_wrapper{
 
     body {
-        color: #000000;
+        color: white;
         font-family: Sans-Serif;
         padding: 30px;
         background-color: #f6f6f6;
@@ -9,7 +9,7 @@
       
       a {
         text-decoration: none;
-        color: #000000;
+        color: white;
       }
       
       a:hover {
@@ -21,11 +21,11 @@
       .dropdown {
         display: inline-block;
         position: relative;
-        background-color: #94bfb9b2;
+        background-color: rgb(209, 50, 50) ;
       }
       
       .dd-button {
-       color: black;
+       color: white;
        font: 500;
        font-size: 1.2vw;
        padding: 10px 19px;
@@ -105,7 +105,7 @@
           border-radius: 5px;
         }
         .dd-button {
-          color: black;
+          color: white;
           font: 500;
           font-size: 14px;
           padding: 10px 19px;

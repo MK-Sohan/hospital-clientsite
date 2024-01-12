@@ -21,6 +21,8 @@ import Carousel from "../MobileSlider/Carousel";
 import CarouselTabTwoMobile from "../TabTwo/CarouselTabTwoMobile";
 import HelpPackageSlider from "../Helopackage/HelpPackageSlider";
 import Footer from "../Share/Footer/Footer";
+import WelcomeTomedService from "../Welcometomed/WelcomeTomedService";
+import Whatwedo from "../WhatWedo/Whatwedo";
 const Homepage = () => {
   return (
     <div className="">
@@ -29,18 +31,20 @@ const Homepage = () => {
       <SimpleSlider />
       {/* <KnowaboutHospital /> */}
       {/* <Tabs /> */}
+      <WelcomeTomedService />
+      <Whatwedo />
       <Carousel />
       <Bookappointment />
       <Tabtwo />
-      <CarouselTabTwoMobile />
-      <Ourclients />
-      <Supportservices />
+      {/* <CarouselTabTwoMobile /> */}
+      {/* <Ourclients /> */}
+      {/* <Supportservices /> */}
       {/* <Telemedicine /> */}
       {/* <Helppackage /> */}
       {/* <HelpPackageSlider /> */}
       <Tabthree />
       <Ourpartner />
-      <Callus />
+      {/* <Callus /> */}
     </div>
   );
 };

@@ -1,6 +1,14 @@
 .ambulance_details_container_wrapper{
+ 
+    width: 100%;
+//     background-image: linear-gradient(0deg, rgba(16, 15, 15, 0.21), rgba(6, 5, 5, 0.248)), url('../../Assets/backgroundimages/ambulance.jpg');
+//     height: 100%;
+// background-position: center;
+// background-size: contain;
+// background-repeat: no-repeat;
+// background-size: cover;
 
-    background:white;
+   
     .containerr {
            display: flex;
            flex-direction: column;
@@ -31,14 +39,14 @@
            padding: 12px ;
            text-align: center;
            width: 183px;
-        display: flex;
+      display: flex;
         justify-content: center;
         
         font-weight: 400;
         font-size:   20px;
            // background: rgba(128, 128, 128, 0.075);
            cursor: pointer;
-           border: 1px solid #91C1BB;
+           border: 3px solid #051614;
            box-sizing: content-box;
            position: relative;
            outline: none;
@@ -48,13 +56,14 @@
          }
          
          .active-tabs  {
-           background: #026E5F;
+           background: red;
            border: none;
            color: white;
          }
          
          .active-tabs::before {
            content: "";
+       
            display: block;
            position: absolute;
            top: -5px;
@@ -81,7 +90,7 @@
    
          }
          .content {
-           background: white;
+           
            padding: 20px 0px;
            // display: grid;
            // grid-template-columns: repeat(6,1fr);

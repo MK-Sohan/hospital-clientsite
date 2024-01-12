@@ -26,22 +26,17 @@ const Doctors = () => {
   return (
     <div className="doctors_main_container flex flex-col lg:flex-row gap-[10px] justify-center  ">
       <div className="flex flex-col ">
-        <div className="bg-[#FFF0F0] flex flex-col justify-center items-center  rounded">
+        <div className=" flex flex-col justify-center items-center  rounded">
           <div class=" py-1 lg:py-[22px]">
             <p className="w-[134px] p-[5px] font-[500] text-[20px]">NAME</p>
 
             <input
               onChange={(e) => setSesrch(e.target.value)}
               type="text"
-              placeholder=""
+              placeholder="Search By Doctor's Name"
               className="input border-[1px] border-black w-[313px]  lg:w-[488px] rounded-sm"
             />
           </div>
-        </div>
-        <div className=" flex  justify-end px-6 pt-2">
-          <button className="btn bg-[#00A662] w-[127px]   text-white flex justify-center font-[500] text-[16px] hover:text-black">
-            Search
-          </button>
         </div>
       </div>
 
@@ -66,36 +61,6 @@ const Doctors = () => {
                     <p className="text-[#026E5F] font-[600] text-[20px]">
                       {doctor.name}
                     </p>
-
-                    <div className="">
-                      <div className="rating ">
-                        <input
-                          name="rating-2"
-                          className="mask mask-star-2 bg-orange-400"
-                          checked
-                        />
-                        <input
-                          name="rating-2"
-                          className="mask mask-star-2 bg-orange-400"
-                          checked
-                        />
-                        <input
-                          name="rating-2"
-                          className="mask mask-star-2 bg-orange-400"
-                          checked
-                        />
-                        <input
-                          name="rating-2"
-                          className="mask mask-star-2 bg-orange-400"
-                          checked
-                        />
-                        <input
-                          name="rating-2"
-                          className="mask mask-star-2 bg-orange-400"
-                          checked
-                        />
-                      </div>
-                    </div>
                   </div>
 
                   <div className="text-start text-[16px]">
@@ -114,6 +79,12 @@ const Doctors = () => {
                   <div className="text-start text-[16px]">
                     <p className="pt-[8px]">
                       {" "}
+                      Doctor Siting Time - {doctor.sitingtime}
+                    </p>
+                  </div>
+                  <div className="text-start text-[16px]">
+                    <p className="pt-[8px]">
+                      {" "}
                       About - {doctor.about?.slice(0, 70)}...
                     </p>
                   </div>
@@ -123,7 +94,7 @@ const Doctors = () => {
 w-full"
                     >
                       <Link to="/appointmentform" className="w-[100%]">
-                        <button className="btn btn-accent w-[100%]">
+                        <button className="btn red w-[100%]">
                           Get Appointment
                         </button>
                       </Link>
@@ -139,7 +110,7 @@ w-full"
 
                       <button
                         onClick={() => handleDetail(doctor._id)}
-                        className="btn btn-accent w-[100%]"
+                        className="btn bg-red w-[100%]"
                       >
                         Doctor’s Profiles
                       </button>
@@ -158,14 +129,14 @@ w-full"
                     <div className="flex  lg:gap-[5px] lg:mt-[85px]">
                       <button
                         onClick={() => handleDoctorappointmentform(doctor._id)}
-                        className="btn bg-[#91C1BB] rounded-3xl lg:px-5 text-[12px] lg:text-[16px]  font-[400]"
+                        className="btn red text-white rounded-3xl lg:px-5 text-[12px] lg:text-[16px]  font-[400]"
                       >
                         Get Appointment
                       </button>
 
                       <button
                         onClick={() => handleDetail(doctor._id)}
-                        className="btn bg-[#91C1BB] rounded-3xl px-5  text-[16px] font-[400]"
+                        className="btn red text-white rounded-3xl px-5  text-[16px] font-[400]"
                       >
                         Doctor’s Profiles
                       </button>

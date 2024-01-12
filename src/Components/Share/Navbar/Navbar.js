@@ -2,7 +2,17 @@ import React, { useEffect, useState } from "react";
 import "./navbar.scss";
 import logo from "../../../Assets/logo/LOGO14 1.png";
 import { Link } from "react-router-dom";
-import { FaCartPlus } from "react-icons/fa";
+import {
+  FaCartPlus,
+  FaEnvelope,
+  FaFacebook,
+  FaFacebookF,
+  FaFacebookSquare,
+  FaInstagram,
+  FaLocationArrow,
+  FaPhone,
+  FaTwitter,
+} from "react-icons/fa";
 import { useQuery } from "react-query";
 import Loading from "../../Loading/Loading";
 import app from "../../../firebase.init";
@@ -36,130 +46,163 @@ const Navbar = () => {
   }
   return (
     <div>
-      <nav class="hidden lg:block mx-auto  w-full  z-50  bg-[#026E5F]  py-2  text-white shadow-md backdrop-blur-2xl backdrop-saturate-200  lg:py-4">
-        <div>
-          <div class=" flex items-center justify-around  text-gray-900 ">
-            <span>
-              {" "}
-              <Link to="/">
-                <h1 className="text-4xl font-bold text-white">CarePulse</h1>
-              </Link>{" "}
-            </span>
+      <div className="topbar ">
+        <div className="text-white flex justify-center items-center w-[100%] h-[40px]">
+          <div className="bg-black flex justify-center items-center gap-x-36 h-[40px] w-[60%]">
+            <div className="flex justify-center items-center gap-x-2 ">
+              <FaPhone />|<div className="">+8801776817368</div>
+            </div>
+            <div className="flex justify-center items-center gap-x-2 ">
+              <FaEnvelope />|<div className="">mahabubulkabir@gmail.com</div>
+            </div>
+            <div className="flex justify-center items-center gap-x-2 ">
+              <FaLocationArrow />|<div className="">Dhanmondi,Dhaka</div>
+            </div>
+          </div>
+          <div className="pl-7 flex justify-start items-center gap-x-2 h-[40px] red w-[40%]">
+            Follow Now
+            <div className="bg-white h-[30px] w-[40px] flex justify-center text-red-600 items-center">
+              <FaFacebookF />
+            </div>
+            <div className="bg-white h-[30px] w-[40px] flex justify-center text-red-600 items-center">
+              <FaInstagram />
+            </div>
+            <div className="bg-white h-[30px] w-[40px] flex justify-center text-red-600 items-center">
+              <FaTwitter />
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav class=" justify-start mx-auto flex items-center  w-full  z-50  bg-white   text-black shadow-md backdrop-blur-2xl backdrop-saturate-200  h-[90px]">
+        <span className="red pr-6 flex items-center justify-end h-[90px] w-[30%]">
+          {" "}
+          <Link to="/">
+            <h1 className="text-4xl font-bold text-white">MedService</h1>
+            <p className="text-xs font-sans text-white">
+              Medical & Medical Helth
+            </p>
+          </Link>{" "}
+        </span>
+        <div class=" flex items-center justify-around  text-gray-900 ">
+          <ul class="hidden items-center gap-5 lg:flex lg:px-10 lg:justify-center ">
+            <li class="block p-1 font-sans text-md font-normal leading-normal text-black antialiased  ">
+              <Link to="/" class="flex items-center">
+                HOME
+              </Link>
+            </li>
+            <li class="block p-1 font-sans text-md font-normal leading-normal text-black antialiased  ">
+              <Link class="flex items-center" to="/doctors">
+                DOCTORS
+              </Link>
+            </li>
+            <li class="block p-1 font-sans text-md font-normal leading-normal text-black antialiased">
+              <Link to="/ambulanceDetails" class="flex items-center" href="#">
+                AMBULANCE
+              </Link>
+            </li>
+            <li class="block p-1 font-sans text-md font-normal leading-normal text-black antialiased">
+              <Link to="/TabTwoPharmecy" class="flex items-center" href="#">
+                MEDICINE
+              </Link>
+            </li>
 
-            <ul class="hidden items-center gap-5 lg:flex lg:px-10 lg:justify-center ">
-              <li class="block p-1 font-sans text-md font-normal leading-normal text-white antialiased  ">
-                <Link to="/" class="flex items-center">
-                  HOME
+            <li class="block p-1 font-sans text-md font-normal leading-normal text-black antialiased">
+              <Link to="/appointment" class="flex items-center" href="#">
+                MY APPOINTMENT
+              </Link>
+            </li>
+            <li class="block p-1 font-sans text-md font-normal leading-normal text-black antialiased">
+              <Link to="/bloodbank" class="flex items-center" href="#">
+                BLOOD BANK
+              </Link>
+            </li>
+            {admin && (
+              <li class="block p-1 font-sans text-md font-normal leading-normal text-black antialiased">
+                <Link to="/dashboard" class="flex items-center" href="#">
+                  DASHBOARD
                 </Link>
               </li>
-              <li class="block p-1 font-sans text-md font-normal leading-normal text-white antialiased  ">
-                <Link class="flex items-center" to="/doctors">
-                  DOCTORS
-                </Link>
-              </li>
-              <li class="block p-1 font-sans text-md font-normal leading-normal text-white antialiased">
-                <Link to="/ambulanceDetails" class="flex items-center" href="#">
-                  AMBULANCE
-                </Link>
-              </li>
-              <li class="block p-1 font-sans text-md font-normal leading-normal text-white antialiased">
-                <Link to="/TabTwoPharmecy" class="flex items-center" href="#">
-                  MEDICINE
-                </Link>
-              </li>
-              <li class="block p-1 font-sans text-md font-normal leading-normal text-white antialiased">
-                <Link to="/appointment" class="flex items-center" href="#">
-                  MY APPOINTMENT
-                </Link>
-              </li>
-              {admin && (
-                <li class="block p-1 font-sans text-md font-normal leading-normal text-white antialiased">
-                  <Link to="/dashboard" class="flex items-center" href="#">
-                    DASHBOARD
-                  </Link>
-                </li>
-              )}
+            )}
 
-              {/* <li class="block p-1 font-sans text-md font-normal leading-normal text-white antialiased  ">
+            {/* <li class="block p-1 font-sans text-md font-normal leading-normal text-black antialiased  ">
                 <Link class="flex items-center" to="/allroomprices">
                   CABIN
                 </Link>
               </li> */}
-            </ul>
-            <div className="flex items-center gap-x-3">
-              {user ? (
-                <button
-                  onClick={async () => {
-                    const success = await signOut();
-                    localStorage.removeItem("accesstoken");
-                    setAdmin(false);
-                    if (success) {
-                      alert("You are sign out");
-                    }
-                  }}
-                  class="ml-5 middle none center hidden rounded-2xl bg-red-500 border-[1px] py-2 px-8 font-sans text-xs font-bold uppercase text-white shadow-md  transition-all hover:text-black hover:bg-white  active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:inline-block"
-                  type="button"
-                  data-ripple-light="true"
-                >
-                  <span>Sign Out</span>
-                </button>
-              ) : (
-                <div className="">
-                  <Link to="/loginpage">
-                    <button
-                      class="middle none center hidden rounded-2xl bg-transparent border-[1px] py-2 px-8 font-sans text-xs font-bold uppercase text-white shadow-md  transition-all hover:text-black hover:bg-white  active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:inline-block"
-                      type="button"
-                      data-ripple-light="true"
-                    >
-                      <span>Login</span>
-                    </button>
-                  </Link>
-                  <Link to="/signUppage">
-                    <button
-                      class="ml-5 middle none center hidden rounded-2xl bg-transparent border-[1px] py-2 px-8 font-sans text-xs font-bold uppercase text-white shadow-md  transition-all hover:text-black hover:bg-white  active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:inline-block"
-                      type="button"
-                      data-ripple-light="true"
-                    >
-                      <span>Register</span>
-                    </button>
-                  </Link>
+          </ul>
+          <div className="flex items-center gap-x-3">
+            {user ? (
+              <button
+                onClick={async () => {
+                  const success = await signOut();
+                  localStorage.removeItem("accesstoken");
+                  setAdmin(false);
+                  if (success) {
+                    alert("You are sign out");
+                  }
+                }}
+                class="ml-5 middle none center hidden rounded-2xl bg-red-500 border-[1px] py-2 px-8 font-sans text-xs font-bold uppercase text-white shadow-md  transition-all hover:text-black hover:bg-white  active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:inline-block"
+                type="button"
+                data-ripple-light="true"
+              >
+                <span>Sign Out</span>
+              </button>
+            ) : (
+              <div className="">
+                <Link to="/loginpage">
+                  <button
+                    class="middle none center hidden rounded-2xl bg-transparent border-[1px] py-2 px-8 font-sans text-xs font-bold uppercase text-black shadow-md  transition-all hover:text-black hover:bg-white  active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:inline-block"
+                    type="button"
+                    data-ripple-light="true"
+                  >
+                    <span>Login</span>
+                  </button>
+                </Link>
+                <Link to="/signUppage">
+                  <button
+                    class="ml-5 middle none center hidden rounded-2xl bg-transparent border-[1px] py-2 px-8 font-sans text-xs font-bold uppercase text-black shadow-md  transition-all hover:text-black hover:bg-white  active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:inline-block"
+                    type="button"
+                    data-ripple-light="true"
+                  >
+                    <span>Register</span>
+                  </button>
+                </Link>
+              </div>
+            )}
+
+            <Link to="/addToCart" className="text-black text-4xl">
+              <button className="btn btn-ghost btn-circle">
+                <div className="indicator">
+                  <FaCartPlus className="text-4xl" />
+
+                  <span className="badge h-[60%] w-[60%] badge-neutral indicator-item text-white">
+                    {product?.length}{" "}
+                  </span>
                 </div>
-              )}
-
-              <Link to="/addToCart" className="text-white text-4xl">
-                <button className="btn btn-ghost btn-circle">
-                  <div className="indicator">
-                    <FaCartPlus className="text-4xl" />
-
-                    <span className="badge h-[60%] w-[60%] badge-neutral indicator-item text-white">
-                      {product?.length}{" "}
-                    </span>
-                  </div>
-                </button>
-              </Link>
-            </div>
-
-            <button
-              class="middle none relative ml-auto h-6 max-h-[40px] w-6 max-w-[40px] rounded-lg text-center font-sans text-xs font-medium uppercase text-blue-gray-500 transition-all hover:bg-transparent focus:bg-transparent active:bg-transparent disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:hidden"
-              data-collapse-target="navbar"
-            >
-              <span class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 transform">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  ></path>
-                </svg>
-              </span>
-            </button>
+              </button>
+            </Link>
           </div>
+
+          <button
+            class="middle none relative ml-auto h-6 max-h-[40px] w-6 max-w-[40px] rounded-lg text-center font-sans text-xs font-medium uppercase text-blue-gray-500 transition-all hover:bg-transparent focus:bg-transparent active:bg-transparent disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:hidden"
+            data-collapse-target="navbar"
+          >
+            <span class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 transform">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </span>
+          </button>
         </div>
       </nav>
 
@@ -178,7 +221,7 @@ const Navbar = () => {
                     {navbar ? (
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="w-6 h-6 text-white"
+                        className="w-6 h-6 text-black"
                         viewBox="0 0 20 20"
                         fill="currentColor"
                       >
@@ -191,7 +234,7 @@ const Navbar = () => {
                     ) : (
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="w-6 h-6 text-white"
+                        className="w-6 h-6 text-black"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -218,16 +261,16 @@ const Navbar = () => {
                 }`}
               >
                 <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-                  <li className="text-white hover:text-indigo-200">
+                  <li className="text-black hover:text-indigo-200">
                     <Link to="/">Home</Link>
                   </li>
-                  <li className="text-white hover:text-indigo-200">
+                  <li className="text-black hover:text-indigo-200">
                     <a href="javascript:void(0)">Blog</a>
                   </li>
-                  <li className="text-white hover:text-indigo-200">
+                  <li className="text-black hover:text-indigo-200">
                     <a href="javascript:void(0)">About US</a>
                   </li>
-                  <li className="text-white hover:text-indigo-200">
+                  <li className="text-black hover:text-indigo-200">
                     <a href="javascript:void(0)">Contact US</a>
                   </li>
                 </ul>
@@ -235,7 +278,7 @@ const Navbar = () => {
                 <div className="mt-3 space-y-2 lg:hidden md:inline-block">
                   <a
                     href="javascript:void(0)"
-                    className="inline-block w-full px-4 py-2 text-center text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
+                    className="inline-block w-full px-4 py-2 text-center text-black bg-gray-600 rounded-md shadow hover:bg-gray-800"
                   >
                     Sign in
                   </a>
@@ -251,7 +294,7 @@ const Navbar = () => {
             <div className="hidden space-x-2 md:inline-block">
               <a
                 href="javascript:void(0)"
-                className="px-4 py-2 text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
+                className="px-4 py-2 text-black bg-gray-600 rounded-md shadow hover:bg-gray-800"
               >
                 Sign in
               </a>

@@ -104,7 +104,7 @@ const SecontBanner = () => {
             <div class="banner_sub_left_side  flex flex-col gap-3">
               <Link
                 to="/doctors"
-                class="banner_card w-[15vw] h-auto flex justify-evenly px-[20px] py-[20px] rounded items-center gap-3 bg-[#94bfb9b2]"
+                class="banner_card w-[15vw] h-auto flex justify-evenly px-[20px] py-[20px] rounded items-center gap-3 bg-red-600   text-white"
               >
                 <div class="banner_card_chield_img bg-white h-[80px] w-[80px] rounded-full flex justify-center items-center">
                   <img src={icon1} alt="" />
@@ -116,7 +116,7 @@ const SecontBanner = () => {
 
               <a
                 href="#findAmbulence"
-                class="banner_card w-[15vw] h-auto flex justify-evenly px-[20px] py-[20px] rounded items-center gap-3 bg-[#94bfb9e6]"
+                class="banner_card w-[15vw] h-auto flex justify-evenly px-[20px] py-[20px] rounded items-center gap-3 bg-red-600  text-white"
               >
                 <div class="banner_card_chield_img bg-white  h-[80px] w-[80px] rounded-full flex justify-center items-center ">
                   <img className=" " src={icon3} alt="" />
@@ -129,7 +129,7 @@ const SecontBanner = () => {
             <div class="banner_sub_middle_side  flex  flex-col gap-3">
               <a
                 href="#tabTwo"
-                class="banner_card w-[15vw] h-auto flex justify-evenly px-[20px] py-[20px] rounded items-center gap-3 bg-[#94bfb9e6]"
+                class="banner_card w-[15vw] h-auto flex justify-evenly px-[20px] py-[20px] rounded items-center gap-3 bg-red-600  text-white"
               >
                 <div class="banner_card_chield_img bg-white  h-[80px] w-[80px] rounded-full flex justify-center items-center">
                   <img src={icon4} alt="" />
@@ -141,7 +141,7 @@ const SecontBanner = () => {
 
               <a
                 href="#packages"
-                class="banner_card w-[15vw] h-auto flex justify-evenly px-[20px] py-[20px] rounded items-center gap-3 bg-[#94bfb9e6]"
+                class="banner_card w-[15vw] h-auto flex justify-evenly px-[20px] py-[20px] rounded items-center gap-3 bg-red-600  text-white"
               >
                 <div class="banner_card_chield_img bg-white h-[80px] w-[80px] rounded-full flex justify-center items-center">
                   <img src={icon1} alt="" />
@@ -157,7 +157,7 @@ const SecontBanner = () => {
 
               <button
                 onClick={toggleModal}
-                class="banner_card w-[15vw] gap-x-5 h-auto flex  px-[20px] py-[20px] rounded items-center gap-3 bg-[#94bfb9e6]"
+                class="banner_card w-[15vw] gap-x-5 h-auto flex  px-[20px] py-[20px] rounded items-center gap-3 bg-red-600  text-white"
               >
                 <div class="banner_card_chield_img bg-white h-[80px] w-[80px] rounded-full flex justify-center items-center ">
                   <img className=" " src={icon3} alt="" />
@@ -419,7 +419,7 @@ const SecontBanner = () => {
 
               <a
                 href="#telemedicine"
-                class="banner_card w-full max-w-[15vw] h-auto flex justify-evenly px-[20px] py-[20px] rounded items-center gap-3 bg-[#94bfb9e6]"
+                class="banner_card w-full max-w-[15vw] h-auto flex justify-evenly px-[20px] py-[20px] rounded items-center gap-3 bg-red-600  text-white"
               >
                 <div class="banner_card_chield_img bg-white h-[80px] w-[80px] rounded-full flex justify-center items-center">
                   <img src={icon6} alt="" />

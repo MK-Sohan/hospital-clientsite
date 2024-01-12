@@ -11,7 +11,7 @@ const Ourpartner = () => {
         <div class="our_clien_header h-[72px]  mt-[45px] mb-[30px] text-center flex items-center justify-center">
           <h1 class="font-sb text-[26px]">Our Partner</h1>
         </div>
-        <div class=" bg-white our_clients_logo flex items-center justify-center gap-[20px] pb-[20px]">
+        <div class="  our_clients_logo flex items-center justify-center gap-[20px] pb-[20px]">
           <div>
             <img src={clintlogo1} alt="" />
           </div>

@@ -28,7 +28,7 @@ const Tabtwo = () => {
   };
 
   return (
-    <div className="">
+    <div className="bg-gray-300">
       <div className="hidden lg:block">
         <div className="tabtwo_main_container" id="tabTwo">
           <div className="flex  justify-between   pt-[24px] pb-5 px-[143px]">
@@ -140,7 +140,7 @@ const Tabtwo = () => {
           </div>
           <div class="seemore_button   flex justify-center p-[20px]">
             <Link to="/TabTwoPharmecy">
-              <button class="bg-[#026E5F]  rounded-sm p-[10px] w-[208px] text-white font-[500] text-[16px] ">
+              <button class="red  rounded-sm p-[10px] w-[208px] text-white font-[500] text-[16px] ">
                 See all Medicine
               </button>
             </Link>

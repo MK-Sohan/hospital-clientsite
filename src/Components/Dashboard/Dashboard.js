@@ -29,9 +29,9 @@ const Dashboard = () => {
           ></label> */}
           <ul className="menu p-4 w-80 min-h-full bg-slate-800 text-white">
             {/* Sidebar content here */}
-            <li
+            {/* <li
               className={`border-[1px] ${
-                activeButton === "myProfile" ? "bg-black" : "bg-green-600"
+                activeButton === "myProfile" ? "bg-black" : "red"
               } text-white mb-4`}
             >
               <Link
@@ -40,14 +40,14 @@ const Dashboard = () => {
               >
                 My Profile
               </Link>
-            </li>
+            </li> */}
             <li
               className={`border-[1px] ${
-                activeButton === "allUsers" ? "bg-black" : "bg-green-600"
+                activeButton === "allUsers" ? "bg-black" : "red"
               } text-white mb-4`}
             >
               <Link
-                to="/dashboard/allusers"
+                to="/dashboard"
                 onClick={() => handleButtonClick("allUsers")}
               >
                 All Users
@@ -55,7 +55,7 @@ const Dashboard = () => {
             </li>
             <li
               className={`border-[1px] ${
-                activeButton === "allAppointments" ? "bg-black" : "bg-green-600"
+                activeButton === "allAppointments" ? "bg-black" : "red"
               } text-white mb-4`}
             >
               <Link
@@ -67,9 +67,7 @@ const Dashboard = () => {
             </li>
             <li
               className={`border-[1px] ${
-                activeButton === "allcustomerorders"
-                  ? "bg-black"
-                  : "bg-green-600"
+                activeButton === "allcustomerorders" ? "bg-black" : "red"
               } text-white mb-4`}
             >
               <Link
@@ -81,7 +79,7 @@ const Dashboard = () => {
             </li>
             <li
               className={`border-[1px] ${
-                activeButton === "allMedicines" ? "bg-black" : "bg-green-600"
+                activeButton === "allMedicines" ? "bg-black" : "red"
               } text-white mb-4`}
             >
               <Link
@@ -93,7 +91,7 @@ const Dashboard = () => {
             </li>
             <li
               className={`border-[1px] ${
-                activeButton === "addMedicines" ? "bg-black" : "bg-green-600"
+                activeButton === "addMedicines" ? "bg-black" : "red"
               } text-white mb-4`}
             >
               <Link
@@ -101,6 +99,30 @@ const Dashboard = () => {
                 onClick={() => handleButtonClick("addMedicines")}
               >
                 Add Medicines
+              </Link>
+            </li>
+            <li
+              className={`border-[1px] ${
+                activeButton === "manageDoctors" ? "bg-black" : "red"
+              } text-white mb-4`}
+            >
+              <Link
+                to="/dashboard/manageDoctors"
+                onClick={() => handleButtonClick("manageDoctors")}
+              >
+                Manage Doctors
+              </Link>
+            </li>
+            <li
+              className={`border-[1px] ${
+                activeButton === "addDoctor" ? "bg-black" : "red"
+              } text-white mb-4`}
+            >
+              <Link
+                to="/dashboard/addDoctor"
+                onClick={() => handleButtonClick("addDoctor")}
+              >
+                Add Doctor
               </Link>
             </li>
           </ul>

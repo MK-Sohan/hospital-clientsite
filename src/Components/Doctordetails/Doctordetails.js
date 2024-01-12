@@ -41,7 +41,10 @@ const Doctordetails = () => {
               <p className="font-[400] text-[16px] text-black">
                 Email: {docdetail.email}
               </p>
-              <div className="rating mt-[10px]">
+              <p className="font-[400] text-[16px] text-black">
+                Doctor Siting Time: {docdetail.sitingtime}
+              </p>
+              {/* <div className="rating mt-[10px]">
                 <input
                   name="rating-2"
                   className="mask mask-star-2 bg-orange-400"
@@ -67,7 +70,7 @@ const Doctordetails = () => {
                   className="mask mask-star-2 bg-orange-400"
                   checked
                 />
-              </div>
+              </div> */}
               <div className="">
                 {" "}
                 <button
@@ -82,14 +85,14 @@ const Doctordetails = () => {
               <img src={docdetail.image} alt="" />
             </div>
           </div>
-
-          <div className="doctor_detail_section  mb-[106px]">
-            <p className="font-[700] text-[26px] text-black py-4 ">ABOUT:</p>
-            {docdetail.about}
-          </div>
         </div>
       </div>
-
+      <div className=" mb-[106px] ml-[100px]  border-3">
+        <p className="font-[700] text-[26px] text-black py-4 text-start">
+          ABOUT:
+        </p>
+        {docdetail.about}
+      </div>
       {/*---------------------------- mobile view-------------------- */}
       <div className="block lg:hidden">
         <div className="doctors_single_card py-[26px] w-[98%]  shadow-3xl  flex flex-col items-center lg:flex-row bg-[#FFF0F0] ">

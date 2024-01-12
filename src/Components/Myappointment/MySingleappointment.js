@@ -17,7 +17,7 @@ const MySingleappointment = ({ doctor, refetch, setPageLoading }) => {
   };
   return (
     <div>
-      <div className="doctors_card_maindiv shadow-2xl   mt-[26px] items-center">
+      <div className="doctors_card_maindiv shadow-2xl mt-5   bg-white items-center">
         <div className="float-right pr-2 pt-2 ">
           <button
             onClick={() => handleDeleteAppointment(doctor._id)}

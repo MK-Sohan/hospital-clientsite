@@ -50,7 +50,7 @@ const Allusers = () => {
             <tbody>
               {/* <!-- row 1 --> */}
               {users
-                ?.filter((val) => val.email.toLowerCase().includes(search))
+                ?.filter((val) => val?.email?.toLowerCase().includes(search))
                 ?.map((user) => (
                   <SingleUsers
                     key={user._id}

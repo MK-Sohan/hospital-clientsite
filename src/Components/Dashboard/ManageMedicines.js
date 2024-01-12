@@ -35,7 +35,7 @@ const ManageMedicines = () => {
           <div className="select_test_main_container   gap-x-2 ">
             {/* ------------------------- right side--------------------------------------------- */}
 
-            <div className="drugs_details_rightside w-[70%] mx-auto">
+            <div className="drugs_details_rightside w-[100%] mx-auto">
               <div className="tabs_main_container">
                 <h1 className=" text-black font-[500] w-[182px] h-[36px] text-[24px] font-sans text-center mx-auto leading-[31px] pt-[30px] ">
                   BUY MEDICINE
@@ -53,10 +53,10 @@ const ManageMedicines = () => {
 
                 <div className="">
                   <div className="containerr pt-[49px]">
-                    <div className=" grid grid-cols-5 gap-y-10 justify-items-center">
+                    <div className=" grid md:grid-cols-4 grid-cols-1 lg:grid-cols-6 gap-y-10 lg:gap-x-24 justify-items-start">
                       {medicine
                         ?.filter((val) =>
-                          val.name.toLowerCase().includes(search)
+                          val?.name?.toLowerCase().includes(search)
                         )
                         .map((value) => {
                           return (

@@ -37,22 +37,24 @@ const MyAppointment = () => {
   //     fetch(`http://localhost:5000/myappointment/${email}`)
   //       .then((res) => res.json())
   //       .then((data) => {
-  //         // console.log(data);
+  //         // console.log(data);b
   //         setMyappointment(data);
   //       });
   //   }
   // }, [email]);
 
   return (
-    <div className="w-[50%] mx-auto mb-[100px] h-[100vh] ">
-      <div className="">
-        {myAppointment?.map((doctor) => (
-          <MySingleappointment
-            doctor={doctor}
-            refetch={refetch}
-            setPageLoading={setPageLoading}
-          ></MySingleappointment>
-        ))}
+    <div className="h-[100vh]">
+      <div className="w-[50%] mx-auto pb-7  ">
+        <div className="pt-5">
+          {myAppointment?.map((doctor) => (
+            <MySingleappointment
+              doctor={doctor}
+              refetch={refetch}
+              setPageLoading={setPageLoading}
+            ></MySingleappointment>
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -139,7 +139,7 @@ const AmbulanceDetails = () => {
                       </div>
 
                       <div className="flex items-center gap-[12px]">
-                        <button className="w-[210px] flex items-center justify-center gap-[13px] text-white text-[20px] font-[500] bg-[#026E5F] py-[12px]  rounded-md">
+                        <button className="w-[210px] flex items-center justify-center gap-[13px] text-white text-[20px] font-[500] bg-red-600 py-[12px]  rounded-md">
                           <a
                             href="tel:01780605388"
                             style={{ textDecoration: "none", color: "inherit" }}

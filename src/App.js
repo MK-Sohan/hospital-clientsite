@@ -44,9 +44,12 @@ import ManageMedicines from "./Components/Dashboard/ManageMedicines";
 import AllcustomerOrders from "./Components/Dashboard/AllcustomerOrders";
 // import EditMedicine from "./Components/Dashboard/Addmedicine";
 import Addmedicine from "./Components/Dashboard/Addmedicine";
+import AddDoctors from "./Components/Dashboard/AddDoctors";
+import ManageAllDoctors from "./Components/Dashboard/ManageAllDoctors";
+import BloodBank from "./Components/BloodBank/BloodBank";
 function App() {
   return (
-    <div className="bg-[#F5F5F5] app relative">
+    <div className="bg-white app relative">
       <ScrollToTop />
       <Navbar />
       <Routes>
@@ -57,6 +60,14 @@ function App() {
           element={
             <RequireAuth>
               <Doctors />
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path="/bloodbank"
+          element={
+            <RequireAuth>
+              <BloodBank />
             </RequireAuth>
           }
         ></Route>
@@ -76,11 +87,13 @@ function App() {
             </RequireAuth>
           }
         >
-          <Route index element={<MyProfile />}></Route>
-          <Route path="allusers" element={<Allusers />}></Route>
+          {/* <Route element={<MyProfile />}></Route> */}
+          <Route index element={<Allusers />}></Route>
           <Route path="manageappointments" element={<Appointments />}></Route>
           <Route path="managemedicine" element={<ManageMedicines />}></Route>
           <Route path="addmedicine" element={<Addmedicine />}></Route>
+          <Route path="addDoctor" element={<AddDoctors />}></Route>
+          <Route path="manageDoctors" element={<ManageAllDoctors />}></Route>
 
           <Route
             path="allcustomerorders"
