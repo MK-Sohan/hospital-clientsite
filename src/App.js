@@ -47,6 +47,7 @@ import Addmedicine from "./Components/Dashboard/Addmedicine";
 import AddDoctors from "./Components/Dashboard/AddDoctors";
 import ManageAllDoctors from "./Components/Dashboard/ManageAllDoctors";
 import BloodBank from "./Components/BloodBank/BloodBank";
+import AddDonor from "./Components/Dashboard/AddDonor";
 function App() {
   return (
     <div className="bg-white app relative">
@@ -94,6 +95,7 @@ function App() {
           <Route path="addmedicine" element={<Addmedicine />}></Route>
           <Route path="addDoctor" element={<AddDoctors />}></Route>
           <Route path="manageDoctors" element={<ManageAllDoctors />}></Route>
+          <Route path="addDonor" element={<AddDonor />}></Route>
 
           <Route
             path="allcustomerorders"

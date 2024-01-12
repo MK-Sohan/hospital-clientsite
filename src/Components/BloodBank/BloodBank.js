@@ -2,7 +2,16 @@ import React from "react";
 import "./bloodband.scss";
 import { FaFacebookF, FaTelegram, FaWhatsapp } from "react-icons/fa";
 import SingleDonor from "./SingleDonor";
+import { useState } from "react";
+import { useEffect } from "react";
 const BloodBank = () => {
+  const [donor, setDonor] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:5000/bloodDonor")
+      .then((res) => res.json())
+      .then((data) => setDonor(data));
+  }, []);
+  console.log(donor);
   return (
     <div className="bloodbankbackground ">
       <div className=" ">
@@ -25,26 +34,9 @@ const BloodBank = () => {
                   aria-label="Behind the scenes People "
                   class="lg:flex md:flex sm:flex items-center xl:justify-around flex-wrap md:justify-around sm:justify-around lg:justify-around"
                 >
-                  <SingleDonor />
-                  <SingleDonor />
-
-                  <SingleDonor />
-
-                  <SingleDonor />
-
-                  <SingleDonor />
-
-                  <SingleDonor />
-
-                  <SingleDonor />
-
-                  <SingleDonor />
-
-                  <SingleDonor />
-                  <SingleDonor />
-                  <SingleDonor />
-
-                  <SingleDonor />
+                  {donor?.map((value) => (
+                    <SingleDonor value={value} />
+                  ))}
                 </div>
               </div>
             </div>

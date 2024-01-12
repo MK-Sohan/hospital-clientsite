@@ -350,10 +350,14 @@ export const tabonedata = [
 
 export const tabthreedata = [
   {
-    picture: "http://placehold.it/32x32",
+    image: "http://placehold.it/32x32",
     name: "Consuelo Solis",
-    address: "159 Grove Street, Sidman, Rhode Island, 4497",
+    facebook: "https://www.facebook.com/david.sohan.927",
+    telegram: "@mdsohan7886",
+    about:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, libero!",
   },
+
   {
     picture: "http://placehold.it/32x32",
     name: "Hendrix Shannon",
