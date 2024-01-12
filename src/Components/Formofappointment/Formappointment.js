@@ -57,20 +57,22 @@ const Formappointment = () => {
       });
     reset();
   };
+  console.log(docdetail);
   return (
     <div className="mb-20 px-2 lg:px-0">
       <div className="form_header_section flex justify-center items-center ">
-        <div className="doctor_detail_banner_content text-center w-[629px]  flex flex-col items-center py-[25px]">
-          <h1 className="font-[400] text-[24px] text-[#026E5F]">
-            {docdetail.name}
-          </h1>
-          <p className="font-[400] text-[24px] text-black">
-            Speciality - {docdetail.speciality}
-          </p>
-          <p className="font-[400] text-[16px] text-black">
-            5 year of Experience
-          </p>
-          <div className="rating mt-[10px]">
+        <div className="flex items-center justify-center pt-6">
+          <div className="doctor_detail_banner_content text-center w-[629px]  flex flex-col items-center py-[25px]">
+            <h1 className="font-[400] text-[28px] text-[#026E5F]">
+              {docdetail.name}
+            </h1>
+            <p className="font-[400] text-[26px] text-black">
+              Speciality : {docdetail.speciality}
+            </p>
+            <p className="font-[400] text-[26px] text-black">
+              Siting Time : {docdetail.sitingtime}
+            </p>
+            {/* <div className="rating mt-[10px]">
             <input
               type="radio"
               name="rating-2"
@@ -101,7 +103,9 @@ const Formappointment = () => {
               className="mask mask-star-2 bg-orange-400"
               checked
             />
+          </div> */}
           </div>
+          <img className="h-[200px] w-[200px]" src={docdetail.image} alt="" />
         </div>
       </div>
       <div className="h-[1px] w-full bg-black my-5"></div>
