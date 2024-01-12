@@ -48,8 +48,8 @@ const Navbar = () => {
   return (
     <div>
       <div className="topbar ">
-        <div className="text-white flex justify-center items-center w-[100%] h-[40px]">
-          <div className="bg-black flex justify-center items-center gap-x-36 h-[40px] w-[60%]">
+        <div className="text-white flex justify-center items-center w-[100%] h-[50px]">
+          <div className="bg-black flex justify-center items-center gap-x-36 h-[50px] w-[60%]">
             <div className="flex justify-center items-center gap-x-2 ">
               <FaPhone />|<div className="">+8801776817368</div>
             </div>
@@ -60,15 +60,15 @@ const Navbar = () => {
               <FaLocationArrow />|<div className="">Dhanmondi,Dhaka</div>
             </div>
           </div>
-          <div className="pl-7 flex justify-start items-center gap-x-2 h-[40px] red w-[40%]">
+          <div className="pl-7 flex justify-start items-center gap-x-2 h-[50px] red w-[40%]">
             Follow Now
-            <div className="bg-white h-[30px] w-[40px] flex justify-center text-red-600 items-center">
+            <div className="bg-white h-[30px] w-[40px] flex justify-center text-red-600 items-center cursor-pointer hover:bg-gray-600 hover:text-white transition duration-500 ease-in-out">
               <FaFacebookF />
             </div>
-            <div className="bg-white h-[30px] w-[40px] flex justify-center text-red-600 items-center">
+            <div className="bg-white h-[30px] w-[40px] flex justify-center text-red-600 items-center cursor-pointer hover:bg-gray-600 hover:text-white transition duration-500 ease-in-out">
               <FaInstagram />
             </div>
-            <div className="bg-white h-[30px] w-[40px] flex justify-center text-red-600 items-center">
+            <div className="bg-white h-[30px] w-[40px] flex justify-center text-red-600 items-center cursor-pointer hover:bg-gray-600 hover:text-white transition duration-500 ease-in-out">
               <FaTwitter />
             </div>
           </div>
