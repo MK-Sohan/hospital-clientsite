@@ -23,6 +23,7 @@ import HelpPackageSlider from "../Helopackage/HelpPackageSlider";
 import Footer from "../Share/Footer/Footer";
 import WelcomeTomedService from "../Welcometomed/WelcomeTomedService";
 import Whatwedo from "../WhatWedo/Whatwedo";
+import ContactUs from "../Contactus/ContactUs";
 const Homepage = () => {
   return (
     <div className="">
@@ -44,6 +45,7 @@ const Homepage = () => {
       {/* <HelpPackageSlider /> */}
       <Tabthree />
       <Ourpartner />
+      <ContactUs />
       {/* <Callus /> */}
     </div>
   );

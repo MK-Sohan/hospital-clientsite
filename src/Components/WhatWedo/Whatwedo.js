@@ -83,7 +83,7 @@ const Whatwedo = () => {
       </div>
       <div className="flex items-start justify-center mt-10 gap-x-10">
         <div className="text w-[50%] text-end">
-          <h1 className="text-[70px] font-bold opacity-20	">02</h1>
+          <h1 className="text-[70px] font-bold opacity-20	">04</h1>
           <h1 className="text-[40px]">Buy Medicine Online</h1>
           <div className="flex justify-end items-end">
             <p className=" w-[550px]  ">

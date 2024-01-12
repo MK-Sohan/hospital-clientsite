@@ -22,8 +22,12 @@ const Tabthree = () => {
 
           <div className="containerr pt-[23px]">
             <div className="flex flex-col-reverse items-center lg:flex-row lg:justify-center lg:items-center lg:gap-[210px]">
-              <div className="call_emergency_image">
-                <img className="w-[219px] lg:w-[466px]" src={img1} alt="" />
+              <div className="call_emergency_image  border-dashed border-2 w-[530px]  rounded-full flex justify-center items-center h-[530px]">
+                <img
+                  className="animate-bounce w-[219px] lg:w-[466px]"
+                  src={img1}
+                  alt=""
+                />
               </div>
               <div className="call_emergency_details lg:text-start text-center">
                 <h1 className="text-[22px] lg:text-[32px] font-[400] lg:w-[450px]    break-normal mb-[10px]">

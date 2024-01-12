@@ -31,7 +31,7 @@ const Dashboard = () => {
             {/* Sidebar content here */}
             {/* <li
               className={`border-[1px] ${
-                activeButton === "myProfile" ? "bg-black" : "red"
+                activeButton === "myProfile" ? "bg-black" : "bg-green-600"
               } text-white mb-4`}
             >
               <Link
@@ -43,7 +43,7 @@ const Dashboard = () => {
             </li> */}
             <li
               className={`border-[1px] ${
-                activeButton === "allUsers" ? "bg-black" : "red"
+                activeButton === "allUsers" ? "bg-black" : "bg-green-600"
               } text-white mb-4`}
             >
               <Link
@@ -55,7 +55,7 @@ const Dashboard = () => {
             </li>
             <li
               className={`border-[1px] ${
-                activeButton === "allAppointments" ? "bg-black" : "red"
+                activeButton === "allAppointments" ? "bg-black" : "bg-green-600"
               } text-white mb-4`}
             >
               <Link
@@ -67,7 +67,9 @@ const Dashboard = () => {
             </li>
             <li
               className={`border-[1px] ${
-                activeButton === "allcustomerorders" ? "bg-black" : "red"
+                activeButton === "allcustomerorders"
+                  ? "bg-black"
+                  : "bg-green-600"
               } text-white mb-4`}
             >
               <Link
@@ -79,7 +81,7 @@ const Dashboard = () => {
             </li>
             <li
               className={`border-[1px] ${
-                activeButton === "allMedicines" ? "bg-black" : "red"
+                activeButton === "allMedicines" ? "bg-black" : "bg-green-600"
               } text-white mb-4`}
             >
               <Link
@@ -91,7 +93,7 @@ const Dashboard = () => {
             </li>
             <li
               className={`border-[1px] ${
-                activeButton === "addMedicines" ? "bg-black" : "red"
+                activeButton === "addMedicines" ? "bg-black" : "bg-green-600"
               } text-white mb-4`}
             >
               <Link
@@ -103,7 +105,7 @@ const Dashboard = () => {
             </li>
             <li
               className={`border-[1px] ${
-                activeButton === "manageDoctors" ? "bg-black" : "red"
+                activeButton === "manageDoctors" ? "bg-black" : "bg-green-600"
               } text-white mb-4`}
             >
               <Link
@@ -115,7 +117,7 @@ const Dashboard = () => {
             </li>
             <li
               className={`border-[1px] ${
-                activeButton === "addDoctor" ? "bg-black" : "red"
+                activeButton === "addDoctor" ? "bg-black" : "bg-green-600"
               } text-white mb-4`}
             >
               <Link
