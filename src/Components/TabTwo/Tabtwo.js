@@ -32,7 +32,7 @@ const Tabtwo = () => {
       <div className="hidden lg:block">
         <div className="tabtwo_main_container" id="tabTwo">
           <div className="flex  justify-between   pt-[24px] pb-5 px-[143px]">
-            <h1 className=" text-black font-[500] w-[182px] h-[36px] text-[24px] font-sans text-center mx-auto  ">
+            <h1 className=" textred font-[500] w-[182px] h-[36px] text-[24px] font-sans text-center mx-auto  ">
               Buy Medicine
             </h1>
           </div>

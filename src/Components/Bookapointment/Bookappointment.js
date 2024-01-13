@@ -35,7 +35,7 @@ const Bookappointment = () => {
   };
 
   return (
-    <div>
+    <div id="doctorappointment">
       <div class="hidden lg:block book_an_appoinment  mt-[0px]">
         <div class=" flex justify-start items-center w-[100%]">
           <div class="h-[535px] w-[50%]">

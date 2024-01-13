@@ -21,7 +21,7 @@ const TabTwoPharmecy = () => {
 
           <div className="drugs_details_rightside w-[70%] mx-auto">
             <div className="tabs_main_container">
-              <h1 className=" text-black font-[500] w-[182px] h-[36px] text-[24px] font-sans text-center mx-auto leading-[31px] pt-[30px] ">
+              <h1 className=" textred font-[500] w-[182px] h-[36px] text-[24px] font-sans text-center mx-auto leading-[31px] pt-[30px] ">
                 BUY MEDICINE
               </h1>
               <div className="search-bar">

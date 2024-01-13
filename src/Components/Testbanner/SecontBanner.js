@@ -102,8 +102,8 @@ const SecontBanner = () => {
           {/* -----------------banner right side-------------- */}
           <div class="banner_right_side flex flex-col items-center   gap-4 lg:flex-row  ">
             <div class="banner_sub_left_side  flex flex-col gap-3">
-              <Link
-                to="/doctors"
+              <a
+                href="#doctorappointment"
                 class="banner_card w-[15vw] h-auto flex justify-evenly px-[20px] py-[20px] rounded items-center gap-3 bg-red-600   text-white"
               >
                 <div class="hover:animate-spin banner_card_chield_img bg-white h-[80px] w-[80px] rounded-full flex justify-center items-center">
@@ -112,7 +112,7 @@ const SecontBanner = () => {
                 <div class="banner_card_details w-[70px] text-[1.0999999999999999vw] font-bold">
                   Find <br /> A Best Doctor
                 </div>
-              </Link>
+              </a>
 
               <a
                 href="#findAmbulence"
