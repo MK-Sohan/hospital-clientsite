@@ -15,7 +15,40 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+@keyframes shaky {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-5px);
+  }
+  40% {
+    transform: translateX(5px);
+  }
+  60% {
+    transform: translateX(-5px);
+  }
+  80% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 
+/* Apply the shaky animation to the button */
+.shaky-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  animation: shaky 0.5s infinite;
+}
+
+/* Stop the shaky animation on hover */
+.shaky-button:hover {
+  animation: none;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

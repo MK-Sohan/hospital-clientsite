@@ -24,6 +24,7 @@ import Footer from "../Share/Footer/Footer";
 import WelcomeTomedService from "../Welcometomed/WelcomeTomedService";
 import Whatwedo from "../WhatWedo/Whatwedo";
 import ContactUs from "../Contactus/ContactUs";
+import HomepagebloodDonor from "../HomepageBlooddonor/HomepagebloodDonor";
 const Homepage = () => {
   return (
     <div className="">
@@ -43,6 +44,7 @@ const Homepage = () => {
       {/* <Telemedicine /> */}
       {/* <Helppackage /> */}
       {/* <HelpPackageSlider /> */}
+      <HomepagebloodDonor />
       <Tabthree />
       <Ourpartner />
       <ContactUs />

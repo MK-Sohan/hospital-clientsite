@@ -27,7 +27,7 @@ const ContactUs = () => {
                 <ul class="mb-6 md:mb-0">
                   <li class="flex">
                     <div class="flex h-10 w-10 items-center justify-center rounded red text-gray-50">
-                      <FaLocationArrow />
+                      <FaLocationArrow className="animate-pulse" />
                     </div>
                     <div class="ml-4 mb-4">
                       <h3 class="mb-2 text-lg font-medium leading-6 text-black ">
@@ -41,7 +41,7 @@ const ContactUs = () => {
                   </li>
                   <li class="flex">
                     <div class="flex h-10 w-10 items-center justify-center rounded red text-gray-50">
-                      <FaPhone />
+                      <FaPhone className="animate-pulse" />
                     </div>
                     <div class="ml-4 mb-4">
                       <h3 class="mb-2 text-lg font-medium leading-6 text-black ">
@@ -53,7 +53,7 @@ const ContactUs = () => {
                   </li>
                   <li class="flex">
                     <div class="flex h-10 w-10 items-center justify-center rounded red text-gray-50">
-                      <FaClock />
+                      <FaClock className="animate-pulse" />
                     </div>
                     <div class="ml-4 mb-4">
                       <h3 class="mb-2 text-lg font-medium leading-6 text-black ">

@@ -51,25 +51,28 @@ const Navbar = () => {
         <div className="text-white flex justify-center items-center w-[100%] h-[50px]">
           <div className="bg-black flex justify-center items-center gap-x-36 h-[50px] w-[60%]">
             <div className="flex justify-center items-center gap-x-2 ">
-              <FaPhone />|<div className="">+8801776817368</div>
+              <FaPhone className="animate-pulse" />|
+              <div className="">+8801776817368</div>
             </div>
             <div className="flex justify-center items-center gap-x-2 ">
-              <FaEnvelope />|<div className="">mahabubulkabir@gmail.com</div>
+              <FaEnvelope className="animate-pulse" />|
+              <div className="">mahabubulkabir@gmail.com</div>
             </div>
             <div className="flex justify-center items-center gap-x-2 ">
-              <FaLocationArrow />|<div className="">Dhanmondi,Dhaka</div>
+              <FaLocationArrow className="animate-pulse" />|
+              <div className="">Dhanmondi,Dhaka</div>
             </div>
           </div>
           <div className="pl-7 flex justify-start items-center gap-x-2 h-[50px] red w-[40%]">
             Follow Now
             <div className="bg-white h-[30px] w-[40px] flex justify-center text-red-600 items-center cursor-pointer hover:bg-gray-600 hover:text-white transition duration-500 ease-in-out">
-              <FaFacebookF />
+              <FaFacebookF className="animate-bounce hover:animate-none" />
             </div>
             <div className="bg-white h-[30px] w-[40px] flex justify-center text-red-600 items-center cursor-pointer hover:bg-gray-600 hover:text-white transition duration-500 ease-in-out">
-              <FaInstagram />
+              <FaInstagram className="animate-bounce hover:animate-none" />
             </div>
             <div className="bg-white h-[30px] w-[40px] flex justify-center text-red-600 items-center cursor-pointer hover:bg-gray-600 hover:text-white transition duration-500 ease-in-out">
-              <FaTwitter />
+              <FaTwitter className="animate-bounce hover:animate-none" />
             </div>
           </div>
         </div>
@@ -78,7 +81,10 @@ const Navbar = () => {
         <span className="red pr-6 flex items-center justify-end h-[90px] w-[30%]">
           {" "}
           <Link to="/">
-            <h1 className="text-4xl font-bold text-white"> MedService</h1>
+            <h1 className="text-4xl font-bold text-white animate-bounce hover:animate-none">
+              {" "}
+              MedService
+            </h1>
             <p className="text-xs font-sans text-white">
               Medical & Medical Helth
             </p>

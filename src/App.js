@@ -48,6 +48,7 @@ import AddDoctors from "./Components/Dashboard/AddDoctors";
 import ManageAllDoctors from "./Components/Dashboard/ManageAllDoctors";
 import BloodBank from "./Components/BloodBank/BloodBank";
 import AddDonor from "./Components/Dashboard/AddDonor";
+import BackTopBtn from "./Components/BackTopBtn/BackTopBtn";
 function App() {
   return (
     <div className="bg-white app relative">
@@ -185,6 +186,7 @@ function App() {
       </Routes>
 
       <Footer />
+      <BackTopBtn />
       <ToastContainer />
     </div>
   );

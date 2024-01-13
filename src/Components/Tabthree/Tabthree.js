@@ -54,7 +54,7 @@ const Tabthree = () => {
 
                 <div className="mt-5 lg:mt-0 mt- flex flex-col items-center lg:flex-row justify-start lg:items-start gap-[12px] py-5">
                   <Link to="/ambulanceDetails">
-                    <button className=" w-[314px] lg:w-[210px] flex items-center justify-center gap-[13px] text-white text-[20px] font-[500] red py-[12px]  rounded-md">
+                    <button className=" w-[314px] lg:w-[210px] flex items-center justify-center gap-[13px] text-white text-[20px] font-[500] red py-[12px]  rounded-md ">
                       See All Ambulance
                     </button>
                   </Link>
