@@ -13,7 +13,7 @@ const BloodBank = () => {
   }, []);
   console.log(donor);
   return (
-    <div className="bloodbankbackground ">
+    <div className=" ">
       <div className=" ">
         <div class="mb-16">
           <dh-component>

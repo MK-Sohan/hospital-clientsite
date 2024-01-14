@@ -43,12 +43,14 @@ import Appointments from "./Components/Dashboard/Appointments";
 import ManageMedicines from "./Components/Dashboard/ManageMedicines";
 import AllcustomerOrders from "./Components/Dashboard/AllcustomerOrders";
 // import EditMedicine from "./Components/Dashboard/Addmedicine";
+import MessengerCustomerChat from "react-messenger-customer-chat";
 import Addmedicine from "./Components/Dashboard/Addmedicine";
 import AddDoctors from "./Components/Dashboard/AddDoctors";
 import ManageAllDoctors from "./Components/Dashboard/ManageAllDoctors";
 import BloodBank from "./Components/BloodBank/BloodBank";
 import AddDonor from "./Components/Dashboard/AddDonor";
 import BackTopBtn from "./Components/BackTopBtn/BackTopBtn";
+import ManageDonor from "./Components/Dashboard/ManageDonor";
 function App() {
   return (
     <div className="bg-white app relative">
@@ -97,6 +99,7 @@ function App() {
           <Route path="addDoctor" element={<AddDoctors />}></Route>
           <Route path="manageDoctors" element={<ManageAllDoctors />}></Route>
           <Route path="addDonor" element={<AddDonor />}></Route>
+          <Route path="manageDonor" element={<ManageDonor />}></Route>
 
           <Route
             path="allcustomerorders"
@@ -187,6 +190,10 @@ function App() {
 
       <Footer />
       <BackTopBtn />
+      <MessengerCustomerChat
+        pageId="103025519179972"
+        appId="1257335411675093"
+      />
       <ToastContainer />
     </div>
   );

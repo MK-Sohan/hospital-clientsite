@@ -81,10 +81,7 @@ const Navbar = () => {
         <span className="red pr-6 flex items-center justify-end h-[90px] w-[30%]">
           {" "}
           <Link to="/">
-            <h1 className="text-4xl font-bold text-white animate-bounce hover:animate-none">
-              {" "}
-              MedService
-            </h1>
+            <h1 className="text-4xl font-bold text-white"> MedService</h1>
             <p className="text-xs font-sans text-white">
               Medical & Medical Helth
             </p>
