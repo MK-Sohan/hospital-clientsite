@@ -17,12 +17,12 @@ const AmbulanceDetails = () => {
   const [noneAcambulance, setNoneacAmbulance] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/allAmbulance")
+    fetch("https://hospital-server-tau.vercel.app/allAmbulance")
       .then((res) => res.json())
       .then((data) => setAmbulance(data));
   }, []);
   useEffect(() => {
-    fetch("http://localhost:5000/noneacAmbulances")
+    fetch("https://hospital-server-tau.vercel.app/noneacAmbulances")
       .then((res) => res.json())
       .then((data) => setNoneacAmbulance(data));
   }, []);

@@ -5,7 +5,7 @@ const SingleCarts = ({ value, setOrderdelete, refetch }) => {
   // console.log(value);
   const HandleDelete = (id) => {
     // console.log(id);
-    fetch(`http://localhost:5000/cart/${id}`, {
+    fetch(`https://hospital-server-tau.vercel.app/cart/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -36,7 +36,7 @@ const SingleCarts = ({ value, setOrderdelete, refetch }) => {
       quantity: quantity,
     };
     console.log(cartProduct);
-    fetch(`http://localhost:5000/cart/${p._id}`, {
+    fetch(`https://hospital-server-tau.vercel.app/cart/${p._id}`, {
       method: "PUT",
       body: JSON.stringify(cartProduct),
       headers: {

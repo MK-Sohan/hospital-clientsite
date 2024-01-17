@@ -11,7 +11,7 @@ const Doctordetails = () => {
   const [docdetail, setDocdetail] = useState({});
   useEffect(() => {
     if (doctorId) {
-      fetch(`http://localhost:5000/alldoctors/${doctorId}`)
+      fetch(`https://hospital-server-tau.vercel.app/alldoctors/${doctorId}`)
         .then((res) => res.json())
         .then((data) => {
           // console.log(data);

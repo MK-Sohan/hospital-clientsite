@@ -21,7 +21,7 @@ const AddDoctors = () => {
       sitingtime: data.time,
     };
     console.log(doctorinfo);
-    fetch("http://localhost:5000/addDoctor", {
+    fetch("https://hospital-server-tau.vercel.app/addDoctor", {
       method: "POST",
       body: JSON.stringify(doctorinfo),
       headers: {

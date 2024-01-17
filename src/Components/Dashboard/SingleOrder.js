@@ -7,7 +7,7 @@ const SingleOrder = ({ order, refetch, i, currentPage, postsPerPage }) => {
   //   const confirmed = window.confirm("Are you sure to delete ?");
   const handleDelete = (id) => {
     console.log(id);
-    fetch(`http://localhost:5000/customerOrderdelete/${id}`, {
+    fetch(`https://hospital-server-tau.vercel.app/customerOrderdelete/${id}`, {
       method: "DELETE",
       headers: {
         "Content-type": "application/json",

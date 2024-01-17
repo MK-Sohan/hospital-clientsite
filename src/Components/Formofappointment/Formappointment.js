@@ -18,7 +18,7 @@ const Formappointment = () => {
   const [docdetail, setDocdetail] = useState({});
   useEffect(() => {
     if (doctorId) {
-      fetch(`http://localhost:5000/alldoctors/${doctorId}`)
+      fetch(`https://hospital-server-tau.vercel.app/alldoctors/${doctorId}`)
         .then((res) => res.json())
         .then((data) => {
           // console.log(data);
@@ -43,7 +43,7 @@ const Formappointment = () => {
       email: email,
       docdetail: docdetail,
     };
-    fetch("http://localhost:5000/addappointment", {
+    fetch("https://hospital-server-tau.vercel.app/addappointment", {
       method: "POST",
       body: JSON.stringify(productinfo),
       headers: {

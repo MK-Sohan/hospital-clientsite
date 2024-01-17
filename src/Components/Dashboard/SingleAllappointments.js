@@ -8,7 +8,7 @@ const SingleAllappointments = ({ value, refetch }) => {
 
   const handleDeleteAppointment = (id) => {
     // console.log(id);
-    fetch(`http://localhost:5000/deletemyappointment/${id}`, {
+    fetch(`https://hospital-server-tau.vercel.app/deletemyappointment/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

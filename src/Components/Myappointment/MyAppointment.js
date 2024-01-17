@@ -27,14 +27,14 @@ const MyAppointment = () => {
   } = useQuery({
     queryKey: ["pcart"],
     queryFn: () =>
-      fetch(`http://localhost:5000/myappointment/${email}`).then((res) =>
-        res.json()
-      ),
+      fetch(
+        `https://hospital-server-tau.vercel.app/myappointment/${email}`
+      ).then((res) => res.json()),
   });
   // console.log(alldoctors);
   // useEffect(() => {
   //   if (email) {
-  //     fetch(`http://localhost:5000/myappointment/${email}`)
+  //     fetch(`https://hospital-server-tau.vercel.app/myappointment/${email}`)
   //       .then((res) => res.json())
   //       .then((data) => {
   //         // console.log(data);b

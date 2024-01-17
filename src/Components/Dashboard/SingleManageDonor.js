@@ -6,7 +6,7 @@ const SingleManageDonor = ({ value, refetch }) => {
   const handleDonorDelete = (id) => {
     console.log(id);
     // const confirm = alert("Are you sure");
-    fetch(`http://localhost:5000/donorDelete/${id}`, {
+    fetch(`https://hospital-server-tau.vercel.app/donorDelete/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 const SingleUsers = ({ user, index, refetch, setDeleteuser }) => {
   const { email, role } = user;
   const makeAdmin = () => {
-    fetch(`http://localhost:5000/user/admin/${email}`, {
+    fetch(`https://hospital-server-tau.vercel.app/user/admin/${email}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -28,7 +28,7 @@ const SingleUsers = ({ user, index, refetch, setDeleteuser }) => {
   // console.log(user);
   const handleDeleteuser = (id) => {
     console.log(id);
-    fetch(`http://localhost:5000/deleteuser/${id}`, {
+    fetch(`https://hospital-server-tau.vercel.app/deleteuser/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

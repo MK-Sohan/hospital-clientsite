@@ -7,18 +7,21 @@ import useRefetch from "../Hooks/useRefetch";
 import ReactHTMLTableToExcel from "react-html-table-to-excel";
 const AllcustomerOrders = () => {
   const {
-    data: allorders,
+    data: allOrders,
     isLoading,
     refetch,
-  } = useQuery("user", () =>
-    fetch("http://localhost:5000/deliverallorders", {
+  } = useQuery("order", () =>
+    fetch("https://hospital-server-tau.vercel.app/deliver-all-orders", {
       method: "GET",
-      headers: {
-        authorization: `Bearer ${localStorage.getItem("accesstoken")}`,
-      },
+      // headers: {
+      //   authorization: `Bearer ${localStorage.getItem("accesstoken")}`,
+      // },
     }).then((res) => res.json())
   );
-  //   console.log(allorders);
+  console.log(allOrders);
+  if (isLoading) {
+    <Loading></Loading>;
+  }
   return (
     <div className="w-[100%]">
       <div className="overflow-x-auto w-[100%]">
@@ -47,9 +50,12 @@ const AllcustomerOrders = () => {
               <th>Remove product</th>
             </tr>
           </thead>
-          {allorders?.map((order) => (
-            <SingleOrder order={order} refetch={refetch}></SingleOrder>
-          ))}
+
+          {allOrders?.map((order) => (
+              <SingleOrder order={order} refetch={refetch}></SingleOrder>
+            ))
+          
+          }
         </table>
       </div>
     </div>

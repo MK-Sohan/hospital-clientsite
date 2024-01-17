@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 
 const OrderDeleteModal = ({ orderdelete, refetch }) => {
   const HandleDelete = (id) => {
-    fetch(`http://localhost:5000/cart/${id}`, {
+    fetch(`https://hospital-server-tau.vercel.app/cart/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

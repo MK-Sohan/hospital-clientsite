@@ -14,7 +14,7 @@ const SingleMedicine = ({ value }) => {
       about: p.about,
     };
     console.log(cartProduct);
-    fetch(`http://localhost:5000/cart/${p._id}`, {
+    fetch(`https://hospital-server-tau.vercel.app/cart/${p._id}`, {
       method: "PUT",
       body: JSON.stringify(cartProduct),
       headers: {

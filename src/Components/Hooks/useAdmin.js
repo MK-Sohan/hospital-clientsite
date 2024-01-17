@@ -9,7 +9,7 @@ const useAdmin = (user) => {
     const email = user?.email;
     if (email) {
       // console.log(email);
-      fetch(`http://localhost:5000/admin/${email}`)
+      fetch(`https://hospital-server-tau.vercel.app/admin/${email}`)
         .then((res) => res.json())
         .then((data) => {
           setAdmin(data);

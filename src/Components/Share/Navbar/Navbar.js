@@ -37,7 +37,7 @@ const Navbar = () => {
   //   refetch,
   //   isLoading,
   // } = useQuery("pcart", () =>
-  //   fetch(`http://localhost:5000/cartallproducts/${cartuser}`).then((res) =>
+  //   fetch(`https://hospital-server-tau.vercel.app/cartallproducts/${cartuser}`).then((res) =>
   //     res.json()
   //   )
   // );

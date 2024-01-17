@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 const Singlemanagemedicine = ({ value, refetch }) => {
   const handleDelete = (id) => {
     console.log(id);
-    fetch(`http://localhost:5000/medicineDelete/${id}`, {
+    fetch(`https://hospital-server-tau.vercel.app/medicineDelete/${id}`, {
       method: "DELETE",
       headers: {
         "Content-type": "application/json",

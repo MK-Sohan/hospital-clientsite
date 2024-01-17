@@ -19,7 +19,7 @@ const Tabtwo = () => {
   const [search, setSesrch] = useState("");
   console.log(search);
   useEffect(() => {
-    fetch("http://localhost:5000/allmedicine")
+    fetch("https://hospital-server-tau.vercel.app/allmedicine")
       .then((res) => res.json())
       .then((data) => setMedicine(data));
   }, []);

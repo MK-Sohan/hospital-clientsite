@@ -23,7 +23,7 @@ const AddDonor = () => {
       group: data.group,
     };
     console.log(donorInfo);
-    fetch("http://localhost:5000/addbloodDonor", {
+    fetch("https://hospital-server-tau.vercel.app/addbloodDonor", {
       method: "POST",
       body: JSON.stringify(donorInfo),
       headers: {

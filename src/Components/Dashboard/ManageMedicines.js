@@ -11,7 +11,7 @@ const ManageMedicines = () => {
   const [search, setSesrch] = useState("");
   console.log(search);
   // useEffect(() => {
-  //   fetch("http://localhost:5000/allmedicine")
+  //   fetch("https://hospital-server-tau.vercel.app/allmedicine")
   //     .then((res) => res.json())
   //     .then((data) => setMedicine(data));
   // }, []);
@@ -20,7 +20,7 @@ const ManageMedicines = () => {
     isLoading,
     refetch,
   } = useQuery("user", () =>
-    fetch("http://localhost:5000/allmedicine", {
+    fetch("https://hospital-server-tau.vercel.app/allmedicine", {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accesstoken")}`,
@@ -54,11 +54,7 @@ const ManageMedicines = () => {
                 <div className="">
                   <div className="containerr pt-[49px]">
                     <div className=" grid md:grid-cols-4 grid-cols-1 lg:grid-cols-6 gap-y-10 lg:gap-x-24 justify-items-start">
-                      {medicine
-                        ?.filter((val) =>
-                          val?.name?.toLowerCase().includes(search)
-                        )
-                        .map((value) => {
+                      {medicine?.filter((val) =>val?.name?.toLowerCase().includes(search)).map((value) => {
                           return (
                             <Singlemanagemedicine
                               value={value}

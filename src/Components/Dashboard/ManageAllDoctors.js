@@ -12,7 +12,7 @@ const ManageAllDoctors = () => {
   const navigate = useNavigate();
 
   // useEffect(() => {
-  //   fetch("http://localhost:5000/alldoctors")
+  //   fetch("https://hospital-server-tau.vercel.app/alldoctors")
   //     .then((res) => res.json())
   //     .then((data) => setAllDoctors(data));
   // }, []);
@@ -23,7 +23,7 @@ const ManageAllDoctors = () => {
     isLoading,
     refetch,
   } = useQuery("user", () =>
-    fetch("http://localhost:5000/alldoctors", {
+    fetch("https://hospital-server-tau.vercel.app/alldoctors", {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accesstoken")}`,
@@ -36,7 +36,7 @@ const ManageAllDoctors = () => {
   };
   const handleDoctorDelete = (id) => {
     console.log(id);
-    fetch(`http://localhost:5000/DoctorDelete/${id}`, {
+    fetch(`https://hospital-server-tau.vercel.app/DoctorDelete/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

@@ -8,7 +8,9 @@ const ManageDonor = () => {
     refetch,
     isLoading,
   } = useQuery("pcart", () =>
-    fetch("http://localhost:5000/bloodDonor").then((res) => res.json())
+    fetch("https://hospital-server-tau.vercel.app/bloodDonor").then((res) =>
+      res.json()
+    )
   );
   return (
     <div className=" ">

@@ -27,9 +27,9 @@ const AddToCart = () => {
     refetch,
     isLoading,
   } = useQuery("pcart", () =>
-    fetch(`http://localhost:5000/cartallproducts/${cartuser}`).then((res) =>
-      res.json()
-    )
+    fetch(
+      `https://hospital-server-tau.vercel.app/cartallproducts/${cartuser}`
+    ).then((res) => res.json())
   );
   if (isLoading) {
     return <Loading></Loading>;
@@ -46,7 +46,7 @@ const AddToCart = () => {
       product: product,
     };
     console.log(productinfo);
-    fetch("http://localhost:5000/allcustomerorders", {
+    fetch("https://hospital-server-tau.vercel.app/allcustomerorders", {
       method: "POST",
       body: JSON.stringify(productinfo),
       headers: {

@@ -26,7 +26,7 @@ const Drugdetails = () => {
   const [medidetail, setMedidetail] = useState({});
   useEffect(() => {
     if (medicineId) {
-      fetch(`http://localhost:5000/allmedicine/${medicineId}`)
+      fetch(`https://hospital-server-tau.vercel.app/allmedicine/${medicineId}`)
         .then((res) => res.json())
         .then((data) => {
           // console.log(data);
@@ -47,7 +47,7 @@ const Drugdetails = () => {
       email: user.email,
     };
     console.log(cartProduct);
-    fetch(`http://localhost:5000/cart/${p._id}`, {
+    fetch(`https://hospital-server-tau.vercel.app/cart/${p._id}`, {
       method: "PUT",
       body: JSON.stringify(cartProduct),
       headers: {

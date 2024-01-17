@@ -12,7 +12,7 @@ const Doctors = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:5000/alldoctors")
+    fetch("https://hospital-server-tau.vercel.app/alldoctors")
       .then((res) => res.json())
       .then((data) => setAllDoctors(data));
   }, []);

@@ -7,7 +7,7 @@ import { useEffect } from "react";
 const BloodBank = () => {
   const [donor, setDonor] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/bloodDonor")
+    fetch("https://hospital-server-tau.vercel.app/bloodDonor")
       .then((res) => res.json())
       .then((data) => setDonor(data));
   }, []);

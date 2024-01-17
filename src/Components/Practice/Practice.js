@@ -7,7 +7,7 @@ const Practice = () => {
     const name = event.target.name.value;
     const email = event.target.email.value;
     const user = { name, email };
-    fetch("http://localhost:5000/user", {
+    fetch("https://hospital-server-tau.vercel.app/user", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -21,7 +21,7 @@ const Practice = () => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:5000/alluser")
+    fetch("https://hospital-server-tau.vercel.app/alluser")
       .then((res) => res.json())
       .then((data) => setUser(data));
   }, []);

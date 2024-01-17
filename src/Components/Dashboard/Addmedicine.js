@@ -22,7 +22,7 @@ const Addmedicine = () => {
       company: data.company,
     };
     console.log(productinfo);
-    fetch("http://localhost:5000/addmedicine", {
+    fetch("https://hospital-server-tau.vercel.app/addmedicine", {
       method: "POST",
       body: JSON.stringify(productinfo),
       headers: {

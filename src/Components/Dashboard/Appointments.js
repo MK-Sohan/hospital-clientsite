@@ -7,7 +7,7 @@ const Appointments = () => {
 
   // const [appointments, setAppointments] = useState([]);
   // useEffect(() => {
-  //   fetch("http://localhost:5000/allappointments")
+  //   fetch("https://hospital-server-tau.vercel.app/allappointments")
   //     .then((res) => res.json())
   //     .then((data) => setAppointments(data));
   // }, []);
@@ -18,7 +18,9 @@ const Appointments = () => {
   } = useQuery({
     queryKey: ["pcart"],
     queryFn: () =>
-      fetch("http://localhost:5000/allappointments").then((res) => res.json()),
+      fetch("https://hospital-server-tau.vercel.app/allappointments").then(
+        (res) => res.json()
+      ),
   });
   console.log(appointments);
   return (

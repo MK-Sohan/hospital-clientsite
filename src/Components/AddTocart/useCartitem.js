@@ -14,9 +14,9 @@ const useCartitem = () => {
     refetch,
     isLoading,
   } = useQuery("pcart", () =>
-    fetch(`http://localhost:5000/cartallproducts/${cartuser}`).then((res) =>
-      res.json()
-    )
+    fetch(
+      `https://hospital-server-tau.vercel.app/cartallproducts/${cartuser}`
+    ).then((res) => res.json())
   );
   if (isLoading) {
     return <Loading></Loading>;
